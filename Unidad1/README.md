@@ -27,7 +27,7 @@ en la pantalla led se puede dibujar de la suguiente forma, esta funciona con una
 para poder reproducir musica en el speaker se debe usar la funcion Music.play, luego se puede programar de muchas formas como que emita un sonido al momento de presionar algun boton o que se produzca cuando la cuenta regresiva llegue a 0 que es la que necesito para el reto de la bomba. 
 ![image](https://github.com/jfUPB/bitacorassfi12024-10-sebas890p/assets/110270011/a0e6dd17-4a0b-4ceb-a5f5-0a220a7f5ad0)
 
-¿Qué es una máquina de estados?
+¿Qué es una máquina de estados y cuales son sus eventos?
 Una maquina de estado es la condicion que esta cumpliendo algo en el momento o como su palabra lo dice es el estado que esta realizando, esta maquina divide los distintos estados de comportamiento del programa en un determinado tiempo, teniendo en cuenta el reto, cada estado seria cuando :
 
 Estado de Configuración: La bomba inicia en este estado  
@@ -35,11 +35,26 @@ Estado Armado (Armed): Cuando el pulsador ARMED es presionado
 Estado Explotado (Exploded): Cuando la cuenta regresiva llega a cero  
 Estado Desactivado (Disarmed): Si el código de desarmado correcto se ingresa  
 
-¿Qué son eventos en una máquina de estados?
+
 
 ¿Qué son las acciones?
 
+Las acciones son las funciones o operaciones que se realizan cuando se produce una transicion entre estados en la maquina de estados.
+
+
 ¿Cuáles son los estados, eventos y acciones en el reto propuesto?
+
+los estados son :
+
+Estado de Configuración: La bomba inicia en este estado  
+Estado Armado (Armed): Cuando el pulsador ARMED es presionado  
+Estado Explotado (Exploded): Cuando la cuenta regresiva llega a cero  
+Estado Desactivado (Disarmed): Si el código de desarmado correcto se ingresa  
+
+las acciones son:
+aumentar_tiempo() y disminuir_tiempo(): Estas acciones se ejecutan cuando los pulsadores UP o DOWN son presionados en el estado de configuración  
+
+
 
 ¿Cómo es posible estructurar una aplicación usando una máquina de estados para poder atender varios eventos de manera concurrente?
 
@@ -85,6 +100,7 @@ while True:
     pixel1.update()
     pixel2.update()
 ```
+
 
 
 
