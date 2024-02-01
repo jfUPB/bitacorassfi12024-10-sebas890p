@@ -56,11 +56,6 @@ aumentar_tiempo() y disminuir_tiempo(): Estas acciones se ejecutan cuando los pu
 
 
 
-¿Cómo es posible estructurar una aplicación usando una máquina de estados para poder atender varios eventos de manera concurrente?
-
-¿Cuáles son los eventos que pueden ocurrir de manera simultánea en el problema planteado en el reto?
-
-Construye una aplicación que muestre en la pantalla de LED dos imágenes diferentes que se alternarán cada 2 segundos, pero sin usar la función bloqueante sleep(). Investiga las funciones `ticks_ms()` y ticks_diff() de la biblioteca utime. ¿Cómo puedes utilizar las dos funciones anteriores para resolver el problema de las imágenes que alternan?
 
 Ejemplo de un código en python:
 
@@ -105,3 +100,43 @@ while True:
 
 
 ## Clase 31-01
+
+En esta sesion el profesor nos indico que iba a ser mas de trabajo autonomo, que aprovecharamos a trabajar en las preguntas, por lo que continuo respondiendo las preguntas que me hacian falta. 
+
+
+¿Cómo es posible estructurar una aplicación usando una máquina de estados para poder atender varios eventos de manera concurrente?
+
+Al usar una maquina de estados para estructurar una aplicacion estamos comenzando con pie derecho su realizacion, ya que la maquina de estado nos permite gestionar de una forma mas efectiva este estructuramiento de la siguiente manera:
+
+nos permite identificar eventos, estados y acciones que pueden ocurrir en nuestra aplicacion adelantandonos a posibles errores a futuro.
+
+
+¿Cuáles son los eventos que pueden ocurrir de manera simultánea en el problema planteado en el reto?
+
+hay varios eventos que pueden ocurrir de manera simultánea debido al funcionamiento del reto y como lo maneje el usuario:
+
+Uno podria ser cuando el usario presionar los pulsadores UP y DOWN al mismo tiempo,  es posible que se genere una entrada simultanea y esto altere el funcionamiento adecuada 
+
+
+Presionar el botón ARMED mientras se configura el tiempo:
+
+
+Si un usuario decide armar la bomba mientras está en el modo de configuración , ambas acciones deben ser manejadas simultáneamente para evitar conflictos en la lógica de control.
+
+
+Cambios en la configuración mientras la bomba está armada:
+
+Si la bomba está armada y el usuario decide ajustar el tiempo de configuración, estos cambios deben ser manejados de manera adecuada para evitar problemas y garantizar un correcto funcionamiento del estado de la aplicación.
+
+Llegada de eventos seriales (u, d, a) mientras ocurren otras acciones:
+
+Los eventos seriales pueden ocurrir en cualquier momento, incluso mientras se están llevando a cabo otras operaciones, como la cuenta regresiva o la configuración de tiempo. La aplicación debe ser capaz de procesar estos eventos de manera simultánea.
+
+Inicio de la cuenta regresiva y configuración de tiempo al mismo tiempo:
+
+Un usuario podría intentar armar la bomba y ajustar el tiempo al mismo tiempo.
+
+## Trabajo autonomo 
+
+Construye una aplicación que muestre en la pantalla de LED dos imágenes diferentes que se alternarán cada 2 segundos, pero sin usar la función bloqueante sleep(). Investiga las funciones ticks_ms() y ticks_diff() de la biblioteca utime. ¿Cómo puedes utilizar las dos funciones anteriores para resolver el problema de las imágenes que alternan?
+
