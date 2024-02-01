@@ -138,5 +138,61 @@ Un usuario podría intentar armar la bomba y ajustar el tiempo al mismo tiempo.
 
 ## Trabajo autonomo 
 
+Como trabajo autonomo en casa me plantee hacer el punto 13 que es un ejercicio propuesto por el profesor que es el siguiente:
+
+
 Construye una aplicación que muestre en la pantalla de LED dos imágenes diferentes que se alternarán cada 2 segundos, pero sin usar la función bloqueante sleep(). Investiga las funciones ticks_ms() y ticks_diff() de la biblioteca utime. ¿Cómo puedes utilizar las dos funciones anteriores para resolver el problema de las imágenes que alternan?
+
+tick_ms() funciona para devolver el tiempo en milisegundos y tick_diff() para calcular la diferencia de tiempo entre 2 momentos, con esta funcion calcularemos cuanto tiempo a pasado al iniciar y al finalizar algo. 
+
+
+``` phyton
+from microbit import *
+
+def ticks_ms():
+    return running_time()
+
+def ticks_diff(tinicial, tfinal):
+    return tfinal - tinicial
+
+
+image1 = Image.HAPPY
+image2 = Image.SAD
+
+tiempo_entre_imagenes = 2000
+
+tiempo_referencia = ticks_ms()
+
+while True:
+    
+    tiempo_actual = ticks_ms()
+    tiempo_transcurrido = ticks_diff(tiempo_referencia, tiempo_actual)
+
+    
+    if tiempo_transcurrido >= tiempo_entre_imagenes:
+       
+        display.show(image1)
+        
+        
+        tiempo_referencia = ticks_ms()
+
+       
+        while ticks_diff(tiempo_actual, ticks_ms()) < tiempo_entre_imagenes / 2:
+            pass
+
+    
+        display.show(image2)
+        
+    
+        tiempo_referencia = ticks_ms()
+
+        
+        while ticks_diff(tiempo_referencia, ticks_ms()) < tiempo_entre_imagenes / 2:
+            pass
+
+```
+
+
+https://github.com/jfUPB/bitacorassfi12024-10-sebas890p/assets/110270011/fa2cc2f4-9c0e-4415-a01d-63f396893ea9
+
 
