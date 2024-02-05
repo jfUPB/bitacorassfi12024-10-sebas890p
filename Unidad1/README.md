@@ -159,7 +159,7 @@ https://github.com/jfUPB/bitacorassfi12024-10-sebas890p/assets/110270011/fa2cc2f
 ## Semana 3 
 ##  Clase 5-02
 
-En esta sesion el profesor se dedico la 1ra mitad de la clase a retroalimenta las bitacoras de los estudiantes, por lo que decidi tomarme esta sesion para hacer el punto de la actividad guia que se trata de analizar el siguiente ejemplo para contestar las 2 preguntas prpuestas.
+En esta sesion el profesor se dedico la clase a retroalimenta las bitacoras de los estudiantes, por lo que decidi tomarme esta sesion para hacer el punto de la actividad guia que se trata de analizar el siguiente ejemplo para contestar las 2 preguntas propuestas.
 
 Cómo funciona este ejemplo?
 
@@ -206,5 +206,7 @@ while True:
 En el codigo anterior me doy cuenta que inicia importando la biblioteca de funciones de Utime que sirve para medir intervalos de tiempo y retrasos, lo cual necesita este codigo para medir de forma exacta los intervalos de tiempo usando la funcion tick_diff para medirlos en milisegundos como pude observar en las ultimas lineas del codigo donde pixel1 tiene un tiempo de 1000 milisegundos y pixel2 tiene un tiempo de 500 milisegundos, tambien usa la funcion tick_ms para medir el tiempo inicial del programa y el tiempo actual.
 
 este puntos no tiene alguna relacion directamente con las preguntas pero si con el punto 13 que es contruir una aplicacion usando funciones de Utime, al momento de resolver este punto investigue las funciones requeridas por lo que entiendo mejor su funcionamiento, a la vez tambien se pueden tener en cuenta estas funciones para programar el reto de la unidad, ya que se puede usar tick_diff para tener el tiempo en milisegundos y tick_ms para calcular el tiempo que ha pasado y asi hacer que la bomba explote cuando terminen los segundos. 
+
+
 
 
