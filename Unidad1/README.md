@@ -214,4 +214,6 @@ En la casa continue con el punto de la actividad guia que me propuse en clase, t
 me doy cuenta que el codigo utiliza una clase llamada pixel que la utiliza para representar un pixel en la pantalla led
 
 
+## Semana 3 Clase 7-02
+
 
