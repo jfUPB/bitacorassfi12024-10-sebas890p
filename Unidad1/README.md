@@ -207,6 +207,11 @@ En el codigo anterior me doy cuenta que inicia importando la biblioteca de funci
 
 este puntos no tiene alguna relacion directamente con las preguntas pero si con el punto 13 que es contruir una aplicacion usando funciones de Utime, al momento de resolver este punto investigue las funciones requeridas por lo que entiendo mejor su funcionamiento, a la vez tambien se pueden tener en cuenta estas funciones para programar el reto de la unidad, ya que se puede usar tick_diff para tener el tiempo en milisegundos y tick_ms para calcular el tiempo que ha pasado y asi hacer que la bomba explote cuando terminen los segundos. 
 
+## Trabajo autonomo 
+
+En la casa continue con el punto de la actividad guia que me propuse en clase, tome el tiempo para investigar cada linea del codigo que podria ser gran beneficio para cumplir el reto de la unidad.
+
+me doy cuenta que el codigo utiliza una clase llamada pixel que la utiliza para representar un pixel en la pantalla led
 
 
 
