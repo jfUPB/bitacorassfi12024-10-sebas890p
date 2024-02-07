@@ -1,6 +1,8 @@
 # Bitácora de aprendizaje
-## Semana 2 
-## Clase29-01
+
+## SEMANA 2 
+
+### Sesión 1: lunes enero 29
 
 Empezamos la sesion de clase con una explicación del profesor sobre el reto de la unidad y nos brindo informacion y ayuda de como resolverlo, entre esas ayudas estan unas preguntas, las cuales realice y son las siguientes:
 ¿Cómo se leen los pulsadores A y B?
@@ -54,12 +56,7 @@ Estado Desactivado (Disarmed): Si el código de desarmado correcto se ingresa
 las acciones son:
 aumentar_tiempo() y disminuir_tiempo(): Estas acciones se ejecutan cuando los pulsadores UP o DOWN son presionados en el estado de configuración  
 
-
-
-
-
-
-## Clase 31-01
+### Sesión 2 miércoles enero 31
 
 En esta sesion el profesor nos indico que iba a ser mas de trabajo autonomo, que aprovecharamos a trabajar en las preguntas, por lo que continuo respondiendo las preguntas que me hacian falta. 
 
@@ -96,17 +93,16 @@ Inicio de la cuenta regresiva y configuración de tiempo al mismo tiempo:
 
 Un usuario podría intentar armar la bomba y ajustar el tiempo al mismo tiempo.
 
-## Trabajo autonomo 
+### Sesión 3 fecha?
 
 Como trabajo autonomo en casa me plantee hacer el punto 13 que es un ejercicio propuesto por el profesor que es el siguiente:
-
 
 Construye una aplicación que muestre en la pantalla de LED dos imágenes diferentes que se alternarán cada 2 segundos, pero sin usar la función bloqueante sleep(). Investiga las funciones ticks_ms() y ticks_diff() de la biblioteca utime. ¿Cómo puedes utilizar las dos funciones anteriores para resolver el problema de las imágenes que alternan?
 
 tick_ms() funciona para devolver el tiempo en milisegundos y tick_diff() para calcular la diferencia de tiempo entre 2 momentos, con esta funcion calcularemos cuanto tiempo a pasado al iniciar y al finalizar algo. 
 
 
-``` phyton
+```py
 from microbit import *
 
 def ticks_ms():
@@ -152,14 +148,20 @@ while True:
 
 ```
 
+Esto es un video mostrando el resultado del código:
 
 https://github.com/jfUPB/bitacorassfi12024-10-sebas890p/assets/110270011/fa2cc2f4-9c0e-4415-a01d-63f396893ea9
 
 
-## Semana 3 
-##  Clase 5-02
+## SEMANA 3
+
+### Sesión 1 lunes febrero 2
+
+#### Micro-sesión 1: apertura.
 
 En esta sesion el profesor se dedico la clase a retroalimenta las bitacoras de los estudiantes, por lo que decidi tomarme esta sesion para hacer el punto de la actividad guia que se trata de analizar el siguiente ejemplo para contestar las 2 preguntas propuestas.
+
+#### Micro-sesión 2
 
 Cómo funciona este ejemplo?
 
@@ -203,17 +205,45 @@ while True:
     pixel2.update()
 ```
 
+#### Micro-sesión 3
+
 En el codigo anterior me doy cuenta que inicia importando la biblioteca de funciones de Utime que sirve para medir intervalos de tiempo y retrasos, lo cual necesita este codigo para medir de forma exacta los intervalos de tiempo usando la funcion tick_diff para medirlos en milisegundos como pude observar en las ultimas lineas del codigo donde pixel1 tiene un tiempo de 1000 milisegundos y pixel2 tiene un tiempo de 500 milisegundos, tambien usa la funcion tick_ms para medir el tiempo inicial del programa y el tiempo actual.
 
 este puntos no tiene alguna relacion directamente con las preguntas pero si con el punto 13 que es contruir una aplicacion usando funciones de Utime, al momento de resolver este punto investigue las funciones requeridas por lo que entiendo mejor su funcionamiento, a la vez tambien se pueden tener en cuenta estas funciones para programar el reto de la unidad, ya que se puede usar tick_diff para tener el tiempo en milisegundos y tick_ms para calcular el tiempo que ha pasado y asi hacer que la bomba explote cuando terminen los segundos. 
 
-## Trabajo autonomo 
+#### Micro-sesión 4: cierre 
+
+### Sesión 2 miércoles febrero 5
+
+#### Micro-sesión 1: apertura.
+
+#### Micro-sesión 2
+
+#### Micro-sesión 3
+
+#### Micro-sesión 4: cierre 
+
+
+### Sesión 3 martes 4 de febrero y 
+
+#### Micro-sesión 1: apertura.
 
 En la casa continue con el punto de la actividad guia que me propuse en clase, tome el tiempo para investigar cada linea del codigo que podria ser gran beneficio para cumplir el reto de la unidad.
 
-me doy cuenta que el codigo utiliza una clase llamada pixel que la utiliza para representar un pixel en la pantalla led
+#### Micro-sesión 2
+
+Me doy cuenta que el código utiliza una clase llamada pixel que la utiliza para representar un pixel en la pantalla led
+
+#### Micro-sesión 3
+
+#### Micro-sesión 4
+
+#### Micro-sesión 5: cierre 
 
 
-## Semana 3 Clase 7-02
+
+
+
+
 
 
