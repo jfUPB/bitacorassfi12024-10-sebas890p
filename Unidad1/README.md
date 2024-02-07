@@ -213,9 +213,14 @@ este puntos no tiene alguna relacion directamente con las preguntas pero si con 
 
 #### Micro-sesión 4: cierre 
 
-### Sesión 2 miércoles febrero 5
+Con el analisis de como funciona el tiempo en este ejemplo pude llegar a la conclusion de que este metodo de usar la libreria de Utime podria ser una buena aternativa para implementar en el reto final Sin embargo no se si seria la mas adecuada para dar una buena experiencia al usuario ya que este metodo convierte el tiempo en milisegundos y un usuario promedio no esta acostumbrado a colocar el tiempo en ese formato por lo que en las siguientes sesiones seguire investigando otras alternativas de como controlar tiempo. 
+
+### Sesión 2 miércoles febrero 7
+
 
 #### Micro-sesión 1: apertura.
+
+En esta sesion el profesor inicio mostrandonos un tipo de emprendimiento nuevo que combina la virtualidad con la realidad llamada JUMP, luego continuo con la retroalimentacion de las bitacoras faltantes, por lo que esta sesion me propuse a investigar alternativas de funciones de manejo del tiempo para el codigo del reto final. 
 
 #### Micro-sesión 2
 
@@ -224,7 +229,7 @@ este puntos no tiene alguna relacion directamente con las preguntas pero si con 
 #### Micro-sesión 4: cierre 
 
 
-### Sesión 3 martes 4 de febrero y 
+### Sesión 3 martes 6 de febrero y 8
 
 #### Micro-sesión 1: apertura.
 
