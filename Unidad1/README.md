@@ -224,10 +224,24 @@ En esta sesion el profesor inicio mostrandonos un tipo de emprendimiento nuevo q
 
 #### Micro-sesión 2
 
+estuve viendo algunas paginas y videos de cuentas regresivas para ver que funcionen manejan esta es una 
+https://microbit.org/es-es/projects/make-it-code-it/counter/
+y algunos videos como este 
+https://www.youtube.com/watch?v=tPLK0aw2ftc
+
 #### Micro-sesión 3
+
+luego segui en microbit phyton editor para experimentar un poco, tome el codigo de la pagina ya ostrada anteriormente de microbit 
+que es este ![image](https://github.com/jfUPB/bitacorassfi12024-10-sebas890p/assets/110270011/212e0f2e-9ef6-40b8-84e6-c5643838e2f5)
+
+y lo converti en un contador que en vez de aumentar disminuya la cuenta y asi me quedo
+
+![image](https://github.com/jfUPB/bitacorassfi12024-10-sebas890p/assets/110270011/b56e49cb-e54e-4e9c-bf51-55f07cb76bb0)
+
 
 #### Micro-sesión 4: cierre 
 
+En esta sesion me doy cuenta que puede ser posible encontrar una solucion para hacer una cuenta regresiva mas comoda al usuario sin enbargon debo seguir investigando aun mas. 
 
 ### Sesión 3 martes 6 de febrero y 8
 
@@ -237,15 +251,40 @@ En la casa continue con el punto de la actividad guia que me propuse en clase, t
 
 #### Micro-sesión 2
 
-Me doy cuenta que el código utiliza una clase llamada pixel que la utiliza para representar un pixel en la pantalla led
+Me doy cuenta que el código utiliza una clase llamada pixel que la utiliza para representar un pixel en la pantalla led.
+
+luego esta def __init este metodo inicia la clase pixel el cual tiene 4 instancias pixel x y pixel y, luego esta initState que representa el estado inicial del píxel, y interval que es el intervalo de tiempo en milisegundos para cambiar el estado del píxel.
+self.state = "Init": este inicia el atributo state de la instancia a "Init". Este atributo se utiliza para controlar el estado actual del píxel
+self.startTime = 0: Inicia el atributo startTime a 0. Se utilizará para medir el tiempo transcurrido
+self.interval = interval: se encarga de almacenar el intervalo proporcionado como parámetro en el atributo interval
+self.pixelX = pixelX y self.pixelY = pixelY: Almacenan las coordenadas X e Y del píxel en los atributos correspondientes
 
 #### Micro-sesión 3
 
+def update(self): Define el método update de la clase Pixel, que se utiliza para actualizar el estado del píxel.
+if self.state == "Init":: Comprueba si el estado actual es "Init".
+self.startTime = utime.ticks_ms(): Guarda el tiempo actual en el atributo startTime. Esto marca el inicio del intervalo de tiempo.
+self.state = "WaitTimeout": Cambia el estado a "WaitTimeout". Este estado indica que el píxel está esperando hasta que transcurra el intervalo de tiempo.
+display.set_pixel(self.pixelX, self.pixelY, self.pixelState): Configura el píxel en la posición especificada con el estado actual.
+
+
 #### Micro-sesión 4
+elif self.state == "WaitTimeout":: Si el estado es "WaitTimeout", ejecuta las siguientes líneas.
+currentTime = utime.ticks_ms(): Obtiene el tiempo actual en milisegundos.
+if utime.ticks_diff(currentTime, self.startTime) > self.interval:: Comprueba si ha transcurrido el intervalo de tiempo desde la última actualización.
+self.startTime = currentTime: Actualiza el tiempo de inicio al tiempo actual.
+if self.pixelState == 9: y else:: Cambia el estado del píxel alternando entre 9 y 0.
+
+while True:
+    pixel1.update()
+    pixel2.update()
+Es un bucle infinito que llama al método update de cada instancia en cada iteración. Esto hará que los píxeles cambien de estado según sus intervalos de tiempo especificados.
+
+display.set_pixel(self.pixelX, self.pixelY, self.pixelState): Configura el píxel en la posición especificada con el nuevo estado.
 
 #### Micro-sesión 5: cierre 
 
-
+Con el analizis de este codigo me doy cuenta que hay varios atributos y metodos que puedo usar para la realizacion del reto final, uno de ellos es el metodo update que se puede usar para actualizar el tiempo en la cuenta regresiva de la bomba, otro seria hacer una clase para definir los parametros de los botones y otra para el de la clave. 
 
 
 
