@@ -581,3 +581,123 @@ podemos hacer los eventos independientes o si lo quiero se pueden hacer dependie
 #### Micro-sesión 4: cierre 
 
 Para concluir la sesion debo decir que fue una sesion muy buena para tener ideas nuevas que se puedan implementar en el reto final como la utilizacion de las maquinas de estados, que puede ser excelente para iniciar el codigo ya que muchas no se sabe por donde empezar y de esta forma podemos empezar definiendos los estados en el codigo y luego pasar a los eventos y acciones, otra de las cosas que me quedaros es almacenar todas estas acciones en if para mantener un mejor control del programa. 
+
+
+### Sesión 2 miercoles febrero 14
+
+#### Micro-sesión 1: apertura.
+
+
+#### Micro-sesión 2
+
+Estuve de forma autonoma haciendo pruebas con la ayuda de chatgpt para el reto final, comence teniendo en cuenta un tip del profesor el cual es pedirle a chatgpt que traduzca el codigo proporcionado en c++ 
+a microphyton sin embargo este no lo traduce muy bien por lo que al momento de querer hacer pruebas no pude por lo que este daba error.
+
+![image](https://github.com/jfUPB/bitacorassfi12024-10-sebas890p/assets/110270011/bb1652b4-cc90-4588-adbd-afa5ee452e2b)
+
+por lo tanto con la ayuda de chatgpt empece a hacer pruebas y hacer cambio y por el momento el codigo va asi 
+
+```py
+
+from microbit import display, button_a, button_b, pin_logo, sleep
+
+# Definiciones de pines
+BOMB_OUT = pin_logo
+LED_COUNT = display
+UP_BTN = button_a
+DOWN_BTN = button_b
+ARM_BTN = button_b
+
+# Estados de la máquina de bomba
+class BombStates:
+    CONFIGURATION = 0
+    ARMED = 1
+    EXPLODED = 2
+    DISARMED = 3
+
+# Variables globales
+current_state = BombStates.CONFIGURATION
+countdown_timer = 20
+disarm_code = [UP_BTN, DOWN_BTN, UP_BTN, DOWN_BTN, UP_BTN, UP_BTN, ARM_BTN]
+entered_code = []
+
+# Función para actualizar la pantalla de LED con el tiempo restante
+def update_display():
+    global countdown_timer
+    display.show(str(countdown_timer))
+
+# Función para iniciar la cuenta regresiva
+def start_countdown():
+    global current_state, countdown_timer
+    current_state = BombStates.ARMED
+    while countdown_timer > 0:
+        update_display()
+        sleep(1000)
+        countdown_timer -= 1
+    current_state = BombStates.EXPLODED
+    display.show("B")
+
+# Función para verificar el código de desarmado
+def check_disarm_code():
+    global entered_code, disarm_code, current_state, countdown_timer
+    if entered_code == disarm_code:
+        current_state = BombStates.CONFIGURATION
+        countdown_timer = 20
+        update_display()
+        return True
+    else:
+        return False
+
+# Bucle principal
+while True:
+    if current_state == BombStates.CONFIGURATION:
+        if UP_BTN.is_pressed():
+            if countdown_timer < 60:
+                countdown_timer += 1
+            update_display()
+        elif DOWN_BTN.is_pressed():
+            if countdown_timer > 10:
+                countdown_timer -= 1
+            update_display()
+        elif ARM_BTN.is_pressed():
+            start_countdown()
+
+    elif current_state == BombStates.ARMED:
+        update_display()
+        if ARM_BTN.is_pressed():
+            entered_code.append(ARM_BTN)
+            if len(entered_code) == 7:
+                if check_disarm_code():
+                    entered_code = []
+                else:
+                    current_state = BombStates.EXPLODED
+        elif UP_BTN.is_pressed():
+            entered_code.append(UP_BTN)
+            if len(entered_code) == 7:
+                if check_disarm_code():
+                    entered_code = []
+                else:
+                    current_state = BombStates.EXPLODED
+        elif DOWN_BTN.is_pressed():
+            entered_code.append(DOWN_BTN)
+            if len(entered_code) == 7:
+                if check_disarm_code():
+                    entered_code = []
+                else:
+                    current_state = BombStates.EXPLODED
+
+    elif current_state == BombStates.EXPLODED:
+        display.show("B")
+        sleep(2000)
+        current_state = BombStates.CONFIGURATION
+        countdown_timer = 20
+        entered_code = []
+        update_display()
+```
+
+#### Micro-sesión 3
+
+En esta micro sesion empece a hacer las pruebas usando ya el micro:bit para ver como se comportaba, me paso algo inusual, en el programa de microbit phyton el codigo me dejaba armar la bomba y empezar la cuenta regresiva
+sin embargo al momento de conectar el microbit este no me deja armar la bomba, me deja subir y bajar el tiempo, tambien debo implentar el serial que por el momento lo que investigue podria incluirlo usando la siguiente funcion : "uart.onDataReceived"
+
+
