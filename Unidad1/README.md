@@ -932,3 +932,189 @@ Como clonclusion siento que voy por buen camino debo seguir haciendo pruebas tan
 #### Micro-sesión 1: apertura.
 
 En esta sesion tengo como proposito ver como funciona el codigo del reto final usando el controlador microbit prestado por el profesor .
+
+
+#### Micro-sesión 2:
+
+Estuve haciendo pruebas para poder solucionar el problema con el desarmo de la bomba, lo que se me ocurrio fue quitar el bucle y conformar el codigo de puros IF y ELSE por si en el bucle algo bloqueaba el desarmo, el codigo quedo asi:
+
+```py
+from microbit import display, button_a, button_b, pin_logo, sleep
+
+# Definiciones de pines
+LED_COUNT = display
+UP_BTN = button_a
+DOWN_BTN = button_b
+ARM_BTN = pin_logo
+
+# Estados de la máquina de bomba
+class BombStates:
+    CONFIGURATION = 0
+    ARMED = 1
+    EXPLODED = 2
+    DISARMED = 3
+
+# Variables globales
+current_state = BombStates.CONFIGURATION
+countdown_timer = 20
+disarm_code = ['UP', 'DOWN', 'UP', 'DOWN', 'UP', 'UP', 'UP']
+entered_code = [UP_BTN , DOWN_BTN , UP_BTN , DOWN_BTN , UP_BTN, UP_BTN , ARM_BTN]
+
+# Función para actualizar la pantalla de LED con el tiempo restante
+def update_display():
+    global countdown_timer
+    LED_COUNT.show(str(countdown_timer))
+
+# Función para manejar la lógica de la bomba 
+def bomb_logic():
+    global current_state, countdown_timer, entered_code
+
+    if current_state == BombStates.CONFIGURATION:
+        if UP_BTN.is_pressed():
+            if countdown_timer < 60:
+                countdown_timer += 1
+            update_display()
+        elif DOWN_BTN.is_pressed():
+            if countdown_timer > 10:
+                countdown_timer -= 1
+            update_display()
+        elif ARM_BTN.is_touched():
+            current_state = BombStates.ARMED
+            entered_code = [UP_BTN , DOWN_BTN , UP_BTN , DOWN_BTN , UP_BTN, UP_BTN , ARM_BTN]
+            update_display()  
+    elif current_state == BombStates.ARMED:
+        if countdown_timer > 0:
+            sleep(1000)
+            countdown_timer -= 1
+            update_display()
+
+        if ARM_BTN.is_touched():
+            entered_code.append('ARM')
+            if len(entered_code) == 7:
+                if entered_code == disarm_code:
+                    current_state = BombStates.DISARMED
+                else:
+                    current_state = BombStates.EXPLODED
+            sleep(500)  
+            update_display()  
+        elif countdown_timer == 0:
+            current_state = BombStates.EXPLODED
+            update_display()  
+
+    elif current_state == BombStates.EXPLODED:
+        LED_COUNT.show("B")
+        sleep(2000)
+        current_state = BombStates.CONFIGURATION
+        countdown_timer = 20
+        update_display()
+
+    elif current_state == BombStates.DISARMED:
+        LED_COUNT.show("D")
+        sleep(2000)
+        current_state = BombStates.CONFIGURATION
+        countdown_timer = 20
+        update_display()
+
+# Bucle principal
+while True:
+    bomb_logic()
+```
+
+Lo que hice fue poner un while al final para que maneja la logica de la bomba y haya un bucle para actualizar la pantalla, sin embargo no funciona el estado de desarmar la bomba.
+
+#### Micro-sesión 3:
+
+En esta micro sesion lo que hice fue añadir el sonido al momento de que la bomba explote, guiandome de la siguiente pagina:
+https://microbit.org/es-es/projects/make-it-code-it/make-some-noise/
+
+![image](https://github.com/jfUPB/bitacorassfi12024-10-sebas890p/assets/110270011/8264f0d8-5c29-4cc0-a058-346631a64de2)
+
+```py
+from microbit import display, button_a, button_b, pin_logo, sleep 
+import music
+
+# Definiciones de pines
+LED_COUNT = display
+UP_BTN = button_a
+DOWN_BTN = button_b
+ARM_BTN = pin_logo
+
+# Estados de la máquina de bomba
+class BombStates:
+    CONFIGURATION = 0
+    ARMED = 1
+    EXPLODED = 2
+    DISARMED = 3
+
+# Variables globales
+current_state = BombStates.CONFIGURATION
+countdown_timer = 20
+disarm_code = ['UP', 'DOWN', 'UP', 'DOWN', 'UP', 'UP', 'UP']
+entered_code = [UP_BTN , DOWN_BTN , UP_BTN , DOWN_BTN , UP_BTN, UP_BTN , ARM_BTN]
+
+# Función para actualizar la pantalla de LED con el tiempo restante
+def update_display():
+    global countdown_timer
+    LED_COUNT.show(str(countdown_timer))
+
+# Función para manejar la lógica de la bomba 
+def bomb_logic():
+    global current_state, countdown_timer, entered_code
+
+    if current_state == BombStates.CONFIGURATION:
+        if UP_BTN.is_pressed():
+            if countdown_timer < 60:
+                countdown_timer += 1
+            update_display()
+        elif DOWN_BTN.is_pressed():
+            if countdown_timer > 10:
+                countdown_timer -= 1
+            update_display()
+        elif ARM_BTN.is_touched():
+            current_state = BombStates.ARMED
+            entered_code = [UP_BTN , DOWN_BTN , UP_BTN , DOWN_BTN , UP_BTN, UP_BTN , ARM_BTN]
+            update_display()  
+    elif current_state == BombStates.ARMED:
+        if countdown_timer > 0:
+            sleep(1000)
+            countdown_timer -= 1
+            update_display()
+
+        if ARM_BTN.is_touched():
+            entered_code.append('ARM')
+            if len(entered_code) == 7:
+                if entered_code == disarm_code:
+                    current_state = BombStates.DISARMED
+                else:
+                    current_state = BombStates.EXPLODED
+            sleep(500)  
+            update_display()  
+        elif countdown_timer == 0:
+            current_state = BombStates.EXPLODED
+            music.play(music.BA_DING)
+            update_display()  
+
+    elif current_state == BombStates.EXPLODED:
+        LED_COUNT.show("B")
+        sleep(2000)
+        current_state = BombStates.CONFIGURATION
+        countdown_timer = 20
+        update_display()
+
+    elif current_state == BombStates.DISARMED:
+        LED_COUNT.show("D")
+        sleep(2000)
+        current_state = BombStates.CONFIGURATION
+        countdown_timer = 20
+        update_display()
+
+# Bucle principal
+while True:
+    bomb_logic()
+```
+
+Este es el codigo con el sonido.
+
+#### Micro-sesión 4: cierre
+
+De esta sesion concluyo que me debo seguir buscando soluciones para que el estado de desarmo funcione, sin embargo en el resto del codigo voy bien.
