@@ -710,7 +710,7 @@ sin embargo al momento de conectar el microbit este no me deja armar la bomba, m
 De esta sesion aprendi como estructurar el codigo y entender un poco mas con las pruebas que implemente, debo es investigar y hacer mas pruebas en clase con el microbit para poner en uso el web serial terminal.
 
 
-### Sesión 3 martes 6 de febrero y 8
+### Sesión 3 jueves 15 de febrero
 
 #### Micro-sesión 1: apertura.
 
