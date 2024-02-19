@@ -1,4 +1,4 @@
-# Bitácora de aprendizaje
+|# Bitácora de aprendizaje
 
 ## SEMANA 2 
 
@@ -922,4 +922,13 @@ https://www.youtube.com/watch?v=MY4jDrN9_cc
 
 #### Micro-sesión 5: cierre 
 
-Como clonclusion siento que voy puer buen camino debo seguir haciendo pruebas tanto en el programa como en el controlador para corroborar que todo funcione correctamente.
+Como clonclusion siento que voy por buen camino debo seguir haciendo pruebas tanto en el programa como en el controlador para corroborar que todo funcione correctamente.
+
+
+## SEMANA 5
+
+### Sesión 1 lunes febrero 19
+
+#### Micro-sesión 1: apertura.
+
+En esta sesion tengo como proposito ver como funciona el codigo del reto final usando el controlador microbit prestado por el profesor .
