@@ -1,6 +1,8 @@
 from microbit import display, button_a, button_b, pin_logo, sleep 
 import music
+from microbit import *
 
+uart.init(baudrate=115200)
 # Definiciones de pines
 LED_COUNT = display
 UP_BTN = button_a
@@ -31,30 +33,36 @@ def bomb_logic():
 
     if current_state == BombStates.CONFIGURATION:
         if UP_BTN.is_pressed():
+            uart.write('Tiempo aumento 1 segundo')
             if countdown_timer < 60:
                 countdown_timer += 1
             update_display()
         elif DOWN_BTN.is_pressed():
+            uart.write('Tiempo disminuyo 1 segundo')
             if countdown_timer > 10:
-                countdown_timer -= 1
+                countdown_timer -= 1                
             update_display()
         elif ARM_BTN.is_touched():
+            uart.write('Bomba armada')
             current_state = BombStates.ARMED
             entered_code = [UP_BTN , DOWN_BTN , UP_BTN , DOWN_BTN , UP_BTN, UP_BTN , ARM_BTN]
             update_display()  
+            
     elif current_state == BombStates.ARMED:
         if countdown_timer > 0:
             sleep(1000)
             countdown_timer -= 1
+            uart.write('menos 1 segundo')
             update_display()
-
-        if ARM_BTN.is_touched():
-            entered_code.append('ARM')
+        if countdown_timer == 10:
+            uart.write('quedan 10 segundos')
+        
+        if entered_code == disarm_code:     
             if len(entered_code) == 7:
-                if entered_code == disarm_code:
-                    current_state = BombStates.DISARMED
-                else:
-                    current_state = BombStates.EXPLODED
+                
+                current_state = BombStates.DISARMED
+            else:
+                current_state = BombStates.EXPLODED
             sleep(500)  
             update_display()  
         elif countdown_timer == 0:
@@ -63,6 +71,7 @@ def bomb_logic():
             update_display()  
 
     elif current_state == BombStates.EXPLODED:
+        uart.write('BOOOMMMBBBB!!!')
         LED_COUNT.show("B")
         sleep(2000)
         current_state = BombStates.CONFIGURATION
