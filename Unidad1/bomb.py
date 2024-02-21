@@ -1,3 +1,8 @@
+
+####Codigo con el serial incorporado
+
+
+
 from microbit import display, button_a, button_b, pin_logo, sleep 
 import music
 from microbit import *
