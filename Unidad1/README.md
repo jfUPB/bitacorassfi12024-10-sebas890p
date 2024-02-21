@@ -1130,3 +1130,8 @@ Los numeros en los leds en persona si ven claros, en el video se ve asi por la c
 #### Micro-sesión 4: cierre
 
 De esta sesion concluyo que me debo seguir buscando soluciones para que el estado de desarmo funcione, sin embargo en el resto del codigo voy bien.
+
+### Sesión 2 miercoles febrero 21
+
+#### Micro-sesión 1: apertura.
+En esta sesion me voy a dedicar a incorporal el serial en el codigo, utilizando las especificaciones dadas en la 1 semana de clases.
