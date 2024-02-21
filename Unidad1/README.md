@@ -1124,6 +1124,8 @@ https://github.com/jfUPB/bitacorassfi12024-10-sebas890p/assets/110270011/6c690c5
 
 
 
+Los numeros en los leds en persona si ven claros, en el video se ve asi por la camara del celular.
+
 
 #### Micro-sesión 4: cierre
 
