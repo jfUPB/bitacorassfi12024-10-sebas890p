@@ -1142,3 +1142,13 @@ adjunto imagen de web serial terminal
 
 ![image](https://github.com/jfUPB/bitacorassfi12024-10-sebas890p/assets/110270011/abe78723-2ebb-4a12-b570-1707f958c62f)
 
+
+#### Micro-sesión 2:
+
+En esta micro sesion, arregle la sintaxis del serial la cual ahora se ve de la siguiente forma:
+
+![image](https://github.com/jfUPB/bitacorassfi12024-10-sebas890p/assets/110270011/4b626558-1828-4bd4-a8df-efd7abf3d1ac)
+
+Ahora los datos que pasan al serial se ven mas organizados y esteticos. 
+
+tambien estaba tratando que el estado de desarmado funcione sin embargo, no he podido, hice un cambio de definir como funcion el disarm_code, y ahora aveces lee en el serial la clave y muestra que ha sido incorrecta, pero aun no me funciona del todo bien.
