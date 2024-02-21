@@ -1115,6 +1115,16 @@ while True:
 
 Este es el codigo con el sonido.
 
+Insero video de la prueba del microbit con el sonido.
+
+
+
+https://github.com/jfUPB/bitacorassfi12024-10-sebas890p/assets/110270011/6c690c50-91a1-49ba-9b0d-8d386cf4016e
+
+
+
+
+
 #### Micro-sesión 4: cierre
 
 De esta sesion concluyo que me debo seguir buscando soluciones para que el estado de desarmo funcione, sin embargo en el resto del codigo voy bien.
