@@ -1135,3 +1135,10 @@ De esta sesion concluyo que me debo seguir buscando soluciones para que el estad
 
 #### Micro-sesión 1: apertura.
 En esta sesion me voy a dedicar a incorporal el serial en el codigo, utilizando las especificaciones dadas en la 1 semana de clases.
+
+#### Micro-sesión 2:
+En esta micro sesion incorpore el serial en el codigo el cual me sirvio bien guiandome de la primera semana del curso, por lo tanto use la funcion uart.init(baudrate=115200) 
+adjunto imagen de web serial terminal
+
+![image](https://github.com/jfUPB/bitacorassfi12024-10-sebas890p/assets/110270011/abe78723-2ebb-4a12-b570-1707f958c62f)
+
