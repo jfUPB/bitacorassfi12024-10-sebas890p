@@ -1156,3 +1156,11 @@ tambien estaba tratando que el estado de desarmado funcione sin embargo, no he p
 #### Micro-sesión 4: cierre
 
 En esta sesion pude incorporar de forma adecuada el serial, ya solo me queda incorporar de forma funcional el estado de la bomba desarmanada. 
+
+
+### Sesión 3 jueves 22 de febrero 
+
+#### Micro-sesión 1: apertura.
+
+En esta sesion planeo poder poner en funcionamiento la clave para desarmar el codigo. 
+
