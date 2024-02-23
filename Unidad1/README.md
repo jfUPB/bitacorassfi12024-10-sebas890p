@@ -1171,3 +1171,12 @@ En esta micro sesion estuve intentando hacer que el pin logo que es el touch del
 #### Micro-sesión 3:
 
 En esta micro sesion, decidi hacer un cambio en la clave a ingresar y quite el boton arm que es el touch o el pin logo, para ver si asi funcionaba la clave y la bomba se ponia en estado de desarmado por lo tanto deje la clave de la siguiente forma: disarm_code = ['UP', 'DOWN', 'UP', 'DOWN', 'UP', 'UP'] , aunque de todas formas no funciono la clave, me gustaria hacer una prueba en clase con el microbit para pasar la informacion al serial y asi saber si la clave la esta leyendo como incorrecta o directamente no la esta leyendo. 
+
+#### Micro-sesión 4:
+En esta micro sesio segui intentando como solucionar el problema de la clave pero realmente no se me ocurria mas cosas, estuve pidiendole a chat gpt que me buscara los errores pero siempre arrojaba las misma solucion, dicha solucion no funciona ya que esta la he implemntado en el codigo y sigue sin funcionar la clave.
+
+![image](https://github.com/jfUPB/bitacorassfi12024-10-sebas890p/assets/110270011/b6fab910-bf6a-479d-895d-a9c3af142e75)
+
+#### Micro-sesión 5: cierre
+
+Realmente esta sesion autonoma no pude avanzar casi ya que los pocos cambios que hice con respocto al codigo como comente antes me gustaria hacerlos en clase teniando el controlador y asi poder pasar la informacion por el serial. 
