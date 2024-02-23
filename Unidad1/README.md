@@ -1164,3 +1164,10 @@ En esta sesion pude incorporar de forma adecuada el serial, ya solo me queda inc
 
 En esta sesion planeo poder poner en funcionamiento la clave para desarmar el codigo. 
 
+#### Micro-sesión 2:
+
+En esta micro sesion estuve intentando hacer que el pin logo que es el touch del microcontrolador leyera solo una vez cuando se ponga el dedo ya que segui el consejo del profesor el cual era que tuviera en cuenta esto, sin embargo luego de hacer que el touch tuviera una funcion booleana para saber si era verdadero o falso cuando se estaba presionando y asi solo tomar una pulsacion cuando se coloquen el dedo hice pruebas y sigui sin funcionar la clave.
+
+#### Micro-sesión 3:
+
+En esta micro sesion, decidi hacer un cambio en la clave a ingresar y quite el boton arm que es el touch o el pin logo, para ver si asi funcionaba la clave y la bomba se ponia en estado de desarmado por lo tanto deje la clave de la siguiente forma: disarm_code = ['UP', 'DOWN', 'UP', 'DOWN', 'UP', 'UP'] , aunque de todas formas no funciono la clave, me gustaria hacer una prueba en clase con el microbit para pasar la informacion al serial y asi saber si la clave la esta leyendo como incorrecta o directamente no la esta leyendo. 
