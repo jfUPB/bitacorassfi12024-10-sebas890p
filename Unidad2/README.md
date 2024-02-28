@@ -2,7 +2,7 @@
 
 ## SEMANA 6
 
-### Sesión 1: lunes enero 26
+### Sesión 1: lunes febrero 26
 
 
 #### micro sesion 1: apertura
@@ -21,3 +21,17 @@ En esta micro sesion estuve viendo algunos de los ejemplos que estan en el docum
 #### micro sesion 4: cierre 
 
 Esta unidad me parece muy interesante e importante ya que vamos a aprender a usar comunicaciones mediante ASCII que es algo muy importante para realizar proyectos propios, a la vez el poder realizar una aplcacion que nos sirva para el portafolio lo hace aun mas interesante.
+
+
+### Sesión 2: miercoles febrero 28
+
+#### micro sesion 1: apertura
+
+Para esta sesion planeo trabajar en esta unidad 2 con una idea que traje que se trata de mediante reconocimiento facial detectar gestos y que estos se pinten en los leds del microbit, le pregunte sobre esta idea al profesor para saber que tan posible puede ser y el me dio algunos materiales donde puedo guiarme para realizarlo por lo que en esta sesion estare revisando este material. 
+
+#### micro sesion 2:
+
+Estuve mirando algunos videos y entendi la teoria de como hacerlo sin embargo aun no se comose integra por lo que veo pertinente realizar el apartado investigativo que esta propuesto en el documento de la clase para asi entender un poco como se integra cada programa
+
+
+
