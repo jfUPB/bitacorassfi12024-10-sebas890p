@@ -35,3 +35,17 @@ Estuve mirando algunos videos y entendi la teoria de como hacerlo sin embargo au
 
 
 
+
+
+
+
+
+
+## SEMANA 7
+
+### Sesión 1: lunes marzo 4
+
+
+#### micro sesion 1: apertura
+
+Comenzamos la sesion con una explicacion del profesor sobre el codigo que esta en la unidad 2 para el microbit donde una hay tecnica para hacer la comunicacion ASCII
