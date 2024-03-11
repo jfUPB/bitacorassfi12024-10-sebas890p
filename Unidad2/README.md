@@ -42,11 +42,34 @@ Para esta sesion planeo trabajar en esta unidad 2 con una idea que traje que se 
 
 Estuve mirando algunos videos y entendi la teoria de como hacerlo sin embargo aun no se comose integra por lo que veo pertinente realizar el apartado investigativo que esta propuesto en el documento de la clase para asi entender un poco como se integra cada programa
 
+#### micro sesion 3:
+
+En esta micro sesion estuve haciendo algunos modelos en teachable machine para ver su funcionalidad, el link a la pagina es el siguiente:
+https://teachablemachine.withgoogle.com/train/image
+
+entre estos modelos como ejemplo adjuntare el modelo de ok y de mal
+![image](https://github.com/jfUPB/bitacorassfi12024-10-sebas890p/assets/110270011/631019c7-23b8-4980-aac6-8f49db0fcaec)
+
+
+#### micro sesion 4: cierre 
+
+En esta sesion me di cuenta que si es posible hacer el reconomiento de gestos mediante la camara como tenia pensado, en las sesion autonoma debo mirar mas a fondo como unir los codigos que me genera teachable machine. 
+
+
+### Sesión 3: autonoma jueves febrero 29
+
+
+#### micro sesion 1: apertura
+
+
+#### micro sesion 2:
+
+
+#### micro sesion 3:
 
 
 
-
-
+#### micro sesion 4:
 
 
 
@@ -58,3 +81,102 @@ Estuve mirando algunos videos y entendi la teoria de como hacerlo sin embargo au
 #### micro sesion 1: apertura
 
 Comenzamos la sesion con una explicacion del profesor sobre el codigo que esta en la unidad 2 para el microbit donde una hay tecnica para hacer la comunicacion ASCII
+
+este es el codigo que estuvimos revisando junto al profesor 
+![image](https://github.com/jfUPB/bitacorassfi12024-10-sebas890p/assets/110270011/2207f7b5-5e93-45d8-a0b9-d6c210ce1184)
+
+
+
+
+#### micro sesion 2:
+
+
+
+#### micro sesion 3:
+
+
+
+
+#### micro sesion 4:cierre
+
+
+
+
+### Sesión 2: miercoles marzo 6
+
+
+
+#### micro sesion 1: apertura
+
+
+#### micro sesion 2:
+
+
+#### micro sesion 3:
+
+
+
+#### micro sesion 4: cierre
+
+
+
+
+
+
+### Sesión 3: jueves marzo 7
+
+#### micro sesion 1: apertura
+
+
+#### micro sesion 2:
+
+
+#### micro sesion 3:
+
+
+
+#### micro sesion 4: cierre
+
+
+
+
+
+
+
+## SEMANA 8
+
+
+
+### Sesión 1: lunes marzo 11
+
+
+#### micro sesion 1: apertura
+
+
+
+#### micro sesion 2:
+
+
+
+#### micro sesion 3:
+
+
+
+#### micro sesion 4: cierre
+ 
+
+### Sesión 2: miercoles marzo 11
+
+
+
+#### micro sesion 1: apertura
+
+
+#### micro sesion 2:
+
+
+#### micro sesion 3:
+
+
+
+#### micro sesion 4: cierre
