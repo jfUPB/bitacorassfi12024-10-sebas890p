@@ -61,15 +61,58 @@ En esta sesion me di cuenta que si es posible hacer el reconomiento de gestos me
 
 #### micro sesion 1: apertura
 
+En esta sesion autonoma me dedicare a investigar en que proyecto trabajar para la entrega final porque el que tenia pensado me queda dificil llevarlo a cabo ya que no cuento con webcam en mi computador personal por lo que solo podria hacer pruebas en clases. 
+
 
 #### micro sesion 2:
+
+En los ejemplos dados por el profesor sobre proyectos que usan p5.js y microbit hay uno que me intereso mucho que es el siguiente 
+
+
+https://youtube.com/shorts/WsIhLJInnio?si=w2KeS0Q2XJo3kIf7
+
+
+![image](https://github.com/jfUPB/bitacorassfi12024-10-sebas890p/assets/110270011/76d88948-350c-4f60-8319-4f2db89f7ca9)
+
+
+en este video podemos observar como se usa el acelerometro del microbit para dibujar en p5.js, este proyecto me intereso bastante, sin embargo para no hacerlo igual al del ejemplo pense que en implementar un laberinto en p5.js y usar el acelerometro del microbit para controlar un punto el cual pasara el laberinto. 
 
 
 #### micro sesion 3:
 
+Para entender un poco mas como llevarlo a cabo con la ayuda de chatgpt respondere la pregunta esencial que esta planteada por el profesor que es la siguiente:
+
+¿Cómo conectar el mundo físicos con mundos virtuales mediante la construcción de aplicaciones interactivas?
+
+Sensores en el Mundo Físico:
+
+Utiliza sensores físicos (como sensores de temperatura, de luz, de movimiento, etc.) para recopilar datos del entorno real.
+Convierte los datos recopilados por los sensores en valores numéricos ASCII que representen las lecturas de los sensores.
+Comunicación con el Mundo Virtual:
+
+Establece una conexión entre el mundo físico y el mundo virtual, por ejemplo, utilizando un microcontrolador como Arduino o un dispositivo IoT.
+Envía los datos ASCII recopilados por los sensores a través de la conexión al mundo virtual.
+Aplicaciones Interactivas en el Mundo Virtual:
+
+En el mundo virtual (por ejemplo, una aplicación web o una aplicación de escritorio), crea una interfaz que reciba y procese los datos ASCII enviados desde el mundo físico.
+Utiliza los datos recibidos para generar respuestas interactivas en la aplicación virtual, como mostrar visualizaciones de datos, controlar objetos virtuales, o realizar acciones específicas basadas en las entradas del mundo físico.
+Respuesta del Mundo Virtual al Mundo Físico:
+
+También puedes diseñar la aplicación virtual para enviar datos ASCII de vuelta al mundo físico en respuesta a las interacciones del usuario en el mundo virtual.
+Por ejemplo, podrías activar actuadores físicos (como LEDs, motores, etc.) basados en las acciones realizadas por el usuario en la aplicación virtual.
 
 
 #### micro sesion 4:
+
+Este es un ejemplo bueno que me dio chatgpt para entender mejor como conectar el mundo real con el virtual:
+
+Supongamos que tienes un sensor de temperatura conectado a un microcontrolador Arduino en el mundo físico. Este sensor recopila la temperatura ambiente y la convierte en un valor numérico. Luego, el microcontrolador envía este valor numérico como una cadena ASCII a una aplicación web en el mundo virtual. En la aplicación web, este valor se utiliza para actualizar un gráfico de temperatura en tiempo real, permitiendo a los usuarios monitorear la temperatura ambiente desde cualquier lugar con acceso a internet.
+
+Esta integración de dispositivos físicos con aplicaciones interactivas en el mundo virtual a través del protocolo ASCII proporciona una forma poderosa de crear experiencias interactivas que combinan lo físico y lo digital.
+
+#### micro sesion 5: 
+
+Me gusto mucho la idea que surgio de esta sesion sobre el laberinto, me inspire del proyecto de dibujar controlandolo desde el microbit pero le hice unos cambios para que sea diferente, en las siguientes sesiones debo investigar como llevarlo a cabo.
 
 
 
@@ -83,6 +126,7 @@ En esta sesion me di cuenta que si es posible hacer el reconomiento de gestos me
 Comenzamos la sesion con una explicacion del profesor sobre el codigo que esta en la unidad 2 para el microbit donde una hay tecnica para hacer la comunicacion ASCII
 
 este es el codigo que estuvimos revisando junto al profesor 
+
 ![image](https://github.com/jfUPB/bitacorassfi12024-10-sebas890p/assets/110270011/2207f7b5-5e93-45d8-a0b9-d6c210ce1184)
 
 
