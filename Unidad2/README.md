@@ -194,11 +194,110 @@ En esta sesion aprendi y entendi sobre el codigo que nos dio el profesor, el cua
 
 #### micro sesion 1: apertura
 
+En esta sesion tengo planeado hacer la sesion de exprimentación, para esto voy a empezar usando los codigos propuestos por el profesor el cual uno es para el microbit y otro para p5.js los cuales son:
+
+```py  microbit
+from microbit import *
+
+uart.init(baudrate=115200)
+display.show(Image.BUTTERFLY)
+
+while True:
+    if button_a.is_pressed():
+        uart.write('A')
+        sleep(500)
+    if button_b.is_pressed():
+        uart.write('B')
+        sleep(500)
+    if accelerometer.was_gesture('shake'):
+        uart.write('C')
+        sleep(500)
+    if uart.any():
+        data = uart.read(1)
+        if data:
+            if data[0] == ord('h'):
+                display.show(Image.HEART)
+                sleep(500)
+                display.show(Image.HAPPY)
+```
+
+
+```p5.js
+let port;
+let connectBtn;
+
+function setup() {
+    createCanvas(400, 400);
+    background(220);
+    port = createSerial();
+    connectBtn = createButton('Connect to micro:bit');
+    connectBtn.position(80, 300);
+    connectBtn.mousePressed(connectBtnClick);
+    let sendBtn = createButton('Send Love');
+    sendBtn.position(220, 300);
+    sendBtn.mousePressed(sendBtnClick);
+    fill('white');
+    ellipse(width / 2, height / 2, 100, 100);
+}
+
+function draw() {
+
+    if(port.availableBytes() > 0){
+        let dataRx = port.read(1);
+        if(dataRx == 'A'){
+            fill('red');
+        }
+        else if(dataRx == 'B'){
+            fill('yellow');
+        }
+        else{
+            fill('green');
+        }
+        background(220);
+        ellipse(width / 2, height / 2, 100, 100);
+        fill('black');
+        text(dataRx, width / 2, height / 2);
+    }
+
+
+    if (!port.opened()) {
+        connectBtn.html('Connect to micro:bit');
+    }
+    else {
+        connectBtn.html('Disconnect');
+    }
+}
+
+function connectBtnClick() {
+    if (!port.opened()) {
+        port.open('MicroPython', 115200);
+    } else {
+        port.close();
+    }
+}
+
+function sendBtnClick() {
+    port.write('h');
+}
+```
+
+
+
 
 #### micro sesion 2:
 
+Empece a expirementar con estos dos codigos pero en p5.js me arroja un error que es el siguiente:
+
+![image](https://github.com/jfUPB/bitacorassfi12024-10-sebas890p/assets/110270011/310d0c11-93cd-488c-b131-67f52031b485)
+
+
+
+
+
 
 #### micro sesion 3:
+
+
 
 
 
@@ -233,7 +332,7 @@ En esta sesion aprendi y entendi sobre el codigo que nos dio el profesor, el cua
 
 
 
-### Sesión 1: lunes marzo 11
+### Sesión 1: lunes marzo 13
 
 
 #### micro sesion 1: apertura
