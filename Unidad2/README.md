@@ -134,16 +134,58 @@ este es el codigo que estuvimos revisando junto al profesor
 
 #### micro sesion 2:
 
+Luego de revisar el codigo me dedicare a responder las preguntas sobre este codigo que planteo el profesor:
 
+¿Cuántos y cuáles estados tiene este programa?
+
+Este tiene varios estados que son los iguientes:
+
+Espera de Shake: En este estado, el programa espera que el acelerómetro detecte un movimiento de sacudida. Cuando se detecta una sacudida, el programa cambia al estado de envío de mensaje a través de UART.
+
+Envío de Mensaje a través de UART: Una vez que se detecta una sacudida, el programa cambia a este estado. En este estado, muestra una cara feliz en la pantalla LED, envía el mensaje "hello world" a través de la interfaz UART y luego muestra un corazón en la pantalla LED. Después de esto, el programa vuelve al estado de espera de sacudida.
+
+Espera de Recepción UART: Este estado ocurre cuando el programa está esperando recibir datos a través de la interfaz UART. Si se recibe algún dato, el programa cambia al estado de procesamiento de datos UART.
+
+Procesamiento de Datos UART: Cuando se reciben datos a través de la interfaz UART, el programa entra en este estado. Aquí, lee los datos uno por uno hasta que encuentra un carácter de nueva línea ('\n'). Luego procesa el mensaje recibido mostrándolo en la pantalla LED, seguido por el número de caracteres en el mensaje. Una vez que se ha procesado el mensaje, el programa vuelve al estado de espera de recepción UART.
+
+
+¿Cuántos y cuáles son los eventos que tiene este programa?
+
+Este tiene 2 eventos:
+
+
+
+Detección de Sacudida (Shake Detection): Este evento ocurre cuando el acelerómetro detecta un movimiento de sacudida. Desencadena el cambio de estado del programa desde el estado de espera de sacudida al estado de envío de mensaje a través de UART.
+
+Recepción de Datos UART (UART Data Reception): Este evento ocurre cuando se reciben datos a través de la interfaz UART. Desencadena el cambio de estado del programa desde el estado de espera de recepción UART al estado de procesamiento de datos UART.
 
 #### micro sesion 3:
 
+¿Hay condiciones guarda? ¿Cuáles son esas condiciones de guarda?
 
+
+Sí, hay condiciones de guarda en este programa. Las condiciones de guarda son las expresiones que se evalúan para determinar si una determinada sección del código debe ejecutarse o no. En este caso, las condiciones de guarda están asociadas con las estructuras de control if y while. Aquí están las condiciones de guarda en el código proporcionado:
+
+Condición de Guarda en el Bucle Principal (while True):
+
+sta es una condición de guarda perpetua que asegura que el bucle se ejecute continuamente mientras la expresión True (verdadero) sea verdadera. Esto significa que el programa se ejecutará indefinidamente, ya que True es siempre verdadero.
+
+
+
+Condición de Guarda para la Detección de Sacudida (Shake Detection):
+
+Esta condición de guarda se evalúa para determinar si se ha detectado una sacudida en el dispositivo Micro:bit utilizando el acelerómetro. Si esta condición es verdadera (es decir, si se detecta una sacudida), el bloque de código dentro del if se ejecuta.
+
+
+Condición de Guarda para la Recepción de Datos UART (UART Data Reception):
+
+
+Esta condición de guarda verifica si hay datos disponibles para ser leídos a través de la interfaz UART. Si la condición es verdadera (es decir, si hay datos disponibles), el bloque de código dentro del if se ejecuta.
 
 
 #### micro sesion 4:cierre
 
-
+En esta sesion aprendi y entendi sobre el codigo que nos dio el profesor, el cual me puede ayudar para emplear las conexiones uart para el reto final.
 
 
 ### Sesión 2: miercoles marzo 6
