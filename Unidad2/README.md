@@ -290,20 +290,66 @@ Empece a expirementar con estos dos codigos pero en p5.js me arroja un error que
 
 ![image](https://github.com/jfUPB/bitacorassfi12024-10-sebas890p/assets/110270011/310d0c11-93cd-488c-b131-67f52031b485)
 
+Al ver el error decidi empezara a responder las preguntas que estan debajo del codigo para ver si con eso podia entender y solucionar el error.
 
 
+¿Qué es p5.webserial.js?
+
+
+
+p5.webserial.js es una biblioteca para el entorno de programación creativa p5.js. Esta biblioteca proporciona una interfaz entre p5.js y la API Web Serial, permitiendo a los desarrolladores interactuar con dispositivos serie desde el navegador web.
+
+La API Web Serial es una tecnología que permite a los navegadores web comunicarse con dispositivos serie conectados al sistema, como Arduino u otros microcontroladores. p5.webserial.js simplifica el proceso de comunicación serie en p5.js, lo que facilita a los desarrolladores la creación de aplicaciones interactivas que interactúan con dispositivos físicos a través de la comunicación serie.
+
+Al utilizar p5.webserial.js, los desarrolladores pueden enviar y recibir datos serie desde y hacia dispositivos conectados, lo que amplía las posibilidades de creación de aplicaciones web interactivas que involucren hardware físico.
 
 
 
 #### micro sesion 3:
 
 
+¿Cómo hago para incluir en mi proyecto de p5.js a p5.webserial.js?
+
+
+Descarga p5.webserial.js: Primero, necesitas descargar la biblioteca p5.webserial.js desde su repositorio en GitHub o desde la fuente oficial.
+
+Agrega el archivo a tu proyecto: Una vez que hayas descargado p5.webserial.js, agrega el archivo a la carpeta de tu proyecto de p5.js. Asegúrate de que esté en la misma carpeta que tu archivo HTML principal.
+
+Incluye el script en tu HTML: Abre tu archivo HTML principal y agrega una etiqueta de script para incluir p5.webserial.js antes de la etiqueta de cierre </body>. Debería verse algo así:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tu proyecto p5.js con p5.webserial.js</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+  <!-- Agrega p5.webserial.js -->
+  <script src="p5.webserial.js"></script>
+</head>
+<body>
+  <!-- Aquí va tu código p5.js -->
+  <script>
+    function setup() {
+      createCanvas(400, 400);
+      // Tu código de configuración
+    }
+    
+    function draw() {
+      background(220);
+      // Tu código de dibujo
+    }
+  </script>
+</body>
+</html>
+```
+
 
 
 
 #### micro sesion 4: cierre
 
-
+En esta sesion no pude realizar los experimentos como hubiera querido por el error que me aparecio, sin embargo a raiz de esto respondi 2 preguntas las cuales me serviran mucho para la comunicacion serial. 
 
 
 
@@ -320,9 +366,11 @@ Empece a expirementar con estos dos codigos pero en p5.js me arroja un error que
 
 
 
-#### micro sesion 4: cierre
+#### micro sesion 4: 
 
 
+
+#### micro sesion 5: cierre
 
 
 
