@@ -358,6 +358,17 @@ En esta sesion no pude realizar los experimentos como hubiera querido por el err
 
 #### micro sesion 1: apertura
 
+En esta sesion autonoma tengo planeado seguir respondiendo las preguntas que me hicieron falta por reponder de la sesion 2 
+
+que son las siguientes:
+
+¿Cómo se crea un objeto que represente el puerto serial?
+
+¿Es necesario abrir y cerrar el puerto serial? ¿Por qué? ¿Qué pasa si no lo hago?
+
+¿Cómo hago para enviar datos el micro:bit desde p5.js y desde p5.js a micro:bit?
+
+
 
 #### micro sesion 2:
 
