@@ -372,16 +372,203 @@ que son las siguientes:
 
 #### micro sesion 2:
 
+¿Cómo se crea un objeto que represente el puerto serial?
+
+
+Incluye la biblioteca p5.webserial.js en tu proyecto.
+
+Utiliza la función serial.getPorts() para obtener una lista de puertos disponibles. Esta función devuelve una promesa que resuelve en una matriz de objetos que representan los puertos serie disponibles.
+
+Selecciona el puerto serie que deseas utilizar. Puedes mostrar la lista de puertos disponibles y permitir que el usuario seleccione uno, o puedes seleccionar automáticamente el puerto si sabes cuál es el que necesitas.
+
+Crea un objeto Serial utilizando el puerto seleccionado. Este objeto te permite comunicarte con el dispositivo conectado al puerto serie.
+
+este es un ejemplo de como hacerlo:
+
+
+```js
+let serial; // Variable para almacenar el objeto Serial
+
+async function setup() {
+  createCanvas(400, 400);
+  
+  // Obtiene una lista de puertos disponibles
+  const portList = await serial.getPorts();
+
+  // Selecciona el primer puerto de la lista (puedes implementar lógica para permitir que el usuario seleccione uno)
+  const selectedPort = portList[0];
+
+  // Crea el objeto Serial utilizando el puerto seleccionado
+  serial = new Serial(selectedPort);
+
+  // Configura la tasa de baudios (opcional, dependiendo del dispositivo)
+  serial.baudrate = 9600;
+
+  // Abre el puerto serie
+  await serial.open();
+}
+
+function draw() {
+  background(220);
+  // Tu código de dibujo
+}
+
+// Función para manejar los datos recibidos del puerto serie
+function serialEvent() {
+  // Lee los datos disponibles del puerto serie
+  const data = serial.read();
+  // Realiza el procesamiento necesario con los datos recibidos
+  // Por ejemplo, puedes mostrarlos en la consola del navegador
+  console.log(data);
+}
+```
+
+
+¿Es necesario abrir y cerrar el puerto serial? ¿Por qué? ¿Qué pasa si no lo hago?
+
+
+En el contexto de la comunicación serie utilizando p5.webserial.js, es importante abrir y cerrar el puerto serial por varias razones:
+
+Inicialización y configuración del puerto: Al abrir el puerto serial, se establece la conexión entre tu aplicación web y el dispositivo conectado al puerto serie. Esto permite configurar parámetros importantes como la velocidad de transmisión (baudrate) u otros ajustes necesarios para la comunicación efectiva.
+
+Inicio de la comunicación: Al abrir el puerto serial, se inicia la comunicación entre tu aplicación y el dispositivo. Esto permite que tu aplicación envíe y reciba datos del dispositivo conectado.
+
+Liberación de recursos: Al cerrar el puerto serial, se liberan los recursos utilizados por la conexión serie, lo que puede ser importante para evitar problemas de memoria o interferencias con otras operaciones de comunicación serie en el sistema.
+
+Si no abres el puerto serial, tu aplicación no podrá comunicarse con el dispositivo conectado. Es similar a intentar enviar un mensaje a través de un canal de comunicación que no está abierto: no se establecerá la conexión y no se podrán intercambiar datos.
+
+Del mismo modo, si no cierras el puerto serial después de haber terminado de utilizarlo, podrías dejar recursos del sistema ocupados innecesariamente, lo que podría llevar a problemas de rendimiento o interferencias con otras aplicaciones que necesiten utilizar el puerto serie.
+
+
+
 
 #### micro sesion 3:
+
+
+¿Cómo hago para enviar datos el micro:bit desde p5.js y desde p5.js a micro:bit?
+
+Configuración del Microbit:
+Programa tu micro:bit para que actúe como un dispositivo serie. Puedes usar MakeCode o MicroPython para escribir un código que lea y escriba datos a través del puerto serie.
+
+Ejemplo de código para MicroPython:
+
+```py
+from microbit import *
+import radio
+
+radio.off()
+uart.init(baudrate=115200)
+
+while True:
+    if uart.any():
+        incoming = uart.read()
+        display.scroll(incoming)
+```
+
+Este código espera recibir datos por el puerto serie y luego los muestra en el display LED del microbit.
+
+Configuración de p5.js:
+Incluye la biblioteca p5.webserial.js en tu proyecto, como se explicó anteriormente.
+
+Escribe el código en p5.js para enviar y recibir datos. un ejemplo básico:
+
+
+```js
+let serial;
+
+async function setup() {
+  createCanvas(400, 400);
+  
+  // Obtiene una lista de puertos disponibles
+  const portList = await serial.getPorts();
+
+  // Selecciona el primer puerto de la lista (puedes implementar lógica para permitir que el usuario seleccione uno)
+  const selectedPort = portList[0];
+
+  // Crea el objeto Serial utilizando el puerto seleccionado
+  serial = new Serial(selectedPort);
+
+  // Abre el puerto serie
+  await serial.open();
+
+  // Configura la tasa de baudios para que coincida con la configuración del micro:bit
+  serial.baudrate = 115200;
+}
+
+function draw() {
+  background(220);
+  // Tu código de dibujo
+}
+
+// Función para manejar los datos recibidos del puerto serie
+function serialEvent() {
+  // Lee los datos disponibles del puerto serie
+  const data = serial.read();
+  // Realiza el procesamiento necesario con los datos recibidos
+  // Por ejemplo, puedes mostrarlos en la consola del navegador
+  console.log(data);
+}
+
+// Función para enviar datos al micro:bit
+function enviarDatosMicroBit(datos) {
+  serial.write(datos);
+}
+```
+
+
+
+
+
 
 
 
 #### micro sesion 4: 
 
 
+En esta micro sesion voy a trabajar las preguntas relacionadas a la cadena de numeros que dicta mi tia ya que no he trabajado en este eejercicio y me servira como investigacion
+
+el caso es el seguiente:
+
+Estas hablando con tu tía por celular y ella te está dice que te va a dictar una cadena de números. ¿Cómo haces para saber que tu tía ya terminó de dictarte toda la cadena de números?
+
+¿Qué relación tiene el caso de tu tía con la siguiente línea de código?
+
+if uart.any():
+    data = uart.read(1)
+    if data:
+        if data[0] == ord('\n'):
+
+
+La relacion que tiene este codigo es que podemos decir que mientras la tia esta dictando una cadena de numeros en este caso nosotros estamos actuando como la funcion uart.read que es la encargada de leer las cadenas de datos siempre y cuando tenga alguna para leer, vemos que si la informacion en este caso data es 0 esto es igual a que ya no hay mas datos para la cadena y esta saltara a otra o dejara un espacio con \n
+
+luego de este caso tambien hay pregunta que es la siguiente:
+
+¿Para qué sirve esta línea de código?
+
+line = bytes(buffer[:end]).decode('utf-8').strip
+
+
+
+Esta línea de código sirve para convertir una porción de datos de tipo bytes en una cadena de caracteres Unicode utilizando la codificación UTF-8 y luego eliminar los espacios en blanco al principio y al final de la cadena resultante.
+
+Aquí hay una explicación detallada de lo que hace cada parte de la línea:
+
+bytes(buffer[:end]): Toma una porción de datos desde el inicio hasta la posición end del buffer y lo convierte en un objeto de tipo bytes.
+
+.decode('utf-8'): Decodifica los bytes utilizando la codificación UTF-8 para convertirlos en una cadena de caracteres Unicode. La codificación UTF-8 es una de las más comunes y permite representar caracteres de múltiples idiomas.
+
+.strip(): Elimina los espacios en blanco al principio y al final de la cadena resultante. Esto es útil para limpiar los datos y eliminar cualquier espacio adicional que pueda haber sido introducido durante la transmisión o manipulación de los datos.
+
+
+
+
+
+
 
 #### micro sesion 5: cierre
+
+
+Con esta sesion que fue de investigacion a raiz de las preguntas propuestas por el profesor he podido comprender mejor varios conceptos y funcionalidades de lineas del codigo las cuales se pueden implementar para el reto final propuesto, la idea es en las siguientes sesiones empezara a trabajar mas enfocado en mi reto final. 
 
 
 
