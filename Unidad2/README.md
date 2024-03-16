@@ -583,7 +583,7 @@ Con esta sesion que fue de investigacion a raiz de las preguntas propuestas por 
 
 #### micro sesion 1: apertura
 
-
+En esta sesion tengo planeado terminar la investigacion y empezar a experimentar un poco en el reto final.
 
 
 
@@ -633,12 +633,56 @@ En esta sesion ya termino con la investigacion por lo que me puse a experimentar
 
 #### micro sesion 1: apertura
 
+En esta sesion tengo planeado seguir con el experimentando en el laberinto.
+
 
 #### micro sesion 2:
+
+En esta micro sesion me dedique a crear paredes para intentar recrear un laberinto, despues de varios intentos este es el resultado:
+
+![image](https://github.com/jfUPB/bitacorassfi12024-10-sebas890p/assets/110270011/c8fc6943-dde5-4736-a880-308e7eaff2cb)
+
+no es el laberinto final pero es un avance ya que se puede apreciar que consegui hacer un camino por el cual tendra paso la pelota
 
 
 #### micro sesion 3:
 
 
+En esta micro sesion segui experimentando con las paredes del laberinto y hice la version final que es la siguiente:
+
+![image](https://github.com/jfUPB/bitacorassfi12024-10-sebas890p/assets/110270011/ad91e5dc-3b22-498b-8af4-8f695fdba936)
+
+no es el laberinto mas bonito pero me servira para lo que necesito, el codigo del canvas del laberinto es el siguiente:
+
+
+```js
+function setup() {
+  createCanvas(400, 400);
+  // Definir las paredes del laberinto
+  mazeWalls.push(new Wall(0, 0, 400, 10)); // Pared superior
+  mazeWalls.push(new Wall(0, 390, 400, 10)); // Pared inferior
+  mazeWalls.push(new Wall(0, 0, 10, 400)); // Pared izquierda
+  mazeWalls.push(new Wall(390, 0, 10, 400)); // Pared derecha
+  mazeWalls.push(new Wall(50, 50, 100, 10));
+  mazeWalls.push(new Wall(50, 200, 100, 10));
+  mazeWalls.push(new Wall(150, 50, 10, 150));
+  mazeWalls.push(new Wall(200, 50, 10, 100));
+  mazeWalls.push(new Wall(200, 50, 100, 10));
+  mazeWalls.push(new Wall(300, 50, 10, 150));
+  mazeWalls.push(new Wall(240, 150, 60, 10));
+  mazeWalls.push(new Wall(300, 150, 10, 90));
+  mazeWalls.push(new Wall(250, 240, 60, 10));
+  mazeWalls.push(new Wall(250, 240, 10, 100));
+  mazeWalls.push(new Wall(250, 340, 100, 10));
+  mazeWalls.push(new Wall(150, 200, 10, 60));
+  mazeWalls.push(new Wall(150, 200, 90, 10));
+  mazeWalls.push(new Wall(150, 290, 10, 100));
+  mazeWalls.push(new Wall(50, 290, 10, 100));
+  mazeWalls.push(new Wall(200, 290, 10, 100));
+}
+```
+
 
 #### micro sesion 4: cierre
+
+En esta sesion pude finalizar la experimentacion de las paredes del laberinto y ya dejar listo el canvas del mismo. 
