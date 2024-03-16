@@ -585,15 +585,46 @@ Con esta sesion que fue de investigacion a raiz de las preguntas propuestas por 
 
 
 
+
+
 #### micro sesion 2:
+
+
+
+Ahora es momento de recordar a tu tía. Ella te dictó una cadena de número. Ahora es tu turno. Le debes dictar tres cadenas números a ella. Además, tu tía debe tener claro cuando terminaste de dictar la tercer cadena.
+
+¿Cómo solucionarías esto haciendo incluyendo entre cada cadena una palabra especial?
+
+¿Cómo harías para hacerle saber a tu tía que ya terminaste con la última cadena?
+
+
+
+Para resolver este problema, podemos dictar las tres cadenas de números a nuestra tía, incluyendo una palabra especial entre cada una para separarlas. Además, al final de la tercera cadena, podemos decir otra palabra especial para indicar que hemos terminado de dictar todas las cadenas. Aquí hay un ejemplo de cómo podríamos hacerlo:
+
+"La primera cadena es: [cadena de números]. La palabra especial es 'banana'."
+"Ahora la segunda cadena: [cadena de números]. La palabra especial es 'manzana'."
+"Y por último, la tercera cadena: [cadena de números]. La palabra especial es 'naranja'."
+"Listo, eso es todo. La palabra especial para indicar que terminé es 'final'."
+Entonces, en este ejemplo, estamos usando las palabras 'banana', 'manzana' y 'naranja' como palabras especiales para separar cada cadena de números, y la palabra 'final' para indicar que hemos terminado de dictar todas las cadenas.
+
+Este enfoque permite que nuestra tía identifique claramente cada cadena de números y sepa cuándo hemos terminado de dictar todas las cadenas.
 
 
 
 #### micro sesion 3:
 
+En esta sesion empece a experimentar un poco en p5.js en crear el laberinto el resultado es el siguiente:
+
+![image](https://github.com/jfUPB/bitacorassfi12024-10-sebas890p/assets/110270011/5abdb8c5-eacb-4f22-968e-7748932d541e)
+
+
+Debo crear mas muros como los que se aprecian en la imagen y la pelotica es la que se movera con el microbit.
 
 
 #### micro sesion 4: cierre
+
+En esta sesion ya termino con la investigacion por lo que me puse a experimentar un poco, ya en las siguientes sesion seran de experimentacion. 
+
  
 
 ### Sesión 2: miercoles marzo 11
