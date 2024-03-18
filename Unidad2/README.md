@@ -707,11 +707,21 @@ En esta sesion tengo planeado empezar a hacer pruebas con el micro bit y experim
 
 #### micro sesion 2:
 
+Estuve haciendo pruebas con el microbot en clase con el codigo que tengo documentado en mi bitacora de la microsesion 3 de la sesion 3 de la semana 7 pero me sale un error que no entiendo cual es 
 
+![image](https://github.com/jfUPB/bitacorassfi12024-10-sebas890p/assets/110270011/b8be0ec4-071b-4cbb-b8d5-98d032866e85)
+
+Estuve buscando la solucion de este error en la pagina suferida por p5.js y en otras que busque por mi cuenta pero no encontre solucion. 
 
 
 
 #### micro sesion 3:
+
+siguiendo con la microseion anterior entonces intento hacerlo con el codigo que esta propuesto por el profesor en la documentacion de la unidad 2 pero me aparece el mismo error 
+
+
+![image](https://github.com/jfUPB/bitacorassfi12024-10-sebas890p/assets/110270011/9d9592e7-baac-4cc7-9939-57f3b6ed0572)
+
 
 
 
