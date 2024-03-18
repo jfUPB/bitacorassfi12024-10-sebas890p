@@ -686,3 +686,64 @@ function setup() {
 #### micro sesion 4: cierre
 
 En esta sesion pude finalizar la experimentacion de las paredes del laberinto y ya dejar listo el canvas del mismo. 
+
+
+
+
+
+
+## SEMANA 9
+
+
+
+### Sesión 1: lunes marzo 18
+
+
+#### micro sesion 1: apertura
+
+En esta sesion tengo planeado empezar a hacer pruebas con el micro bit y experimentar un poco en el proceso. 
+
+
+
+#### micro sesion 2:
+
+
+
+
+
+#### micro sesion 3:
+
+
+
+
+
+#### micro sesion 4: cierre
+
+
+
+
+
+
+### Sesión 2: miercoles marzo 20
+
+
+
+
+#### micro sesion 1: apertura
+
+
+
+
+#### micro sesion 2:
+
+
+
+
+
+#### micro sesion 3:
+
+
+
+
+
+#### micro sesion 4: cierre
