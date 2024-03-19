@@ -578,7 +578,7 @@ Con esta sesion que fue de investigacion a raiz de las preguntas propuestas por 
 
 
 
-### Sesión 1: lunes marzo 13
+### Sesión 1: lunes marzo 11
 
 
 #### micro sesion 1: apertura
@@ -627,7 +627,7 @@ En esta sesion ya termino con la investigacion por lo que me puse a experimentar
 
  
 
-### Sesión 2: miercoles marzo 11
+### Sesión 2: miercoles marzo 13
 
 
 
