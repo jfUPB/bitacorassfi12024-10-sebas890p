@@ -729,7 +729,7 @@ siguiendo con la microseion anterior entonces intento hacerlo con el codigo que 
 
 #### micro sesion 4: cierre
 
-
+Esta sesion no pude lograr casi ningun avance por lo que debo investigar estos errores en las siguientes sesiones
 
 
 
@@ -741,19 +741,119 @@ siguiendo con la microseion anterior entonces intento hacerlo con el codigo que 
 
 #### micro sesion 1: apertura
 
+En esta sesion planeo continuar con lo que quede en la sesion en clase anterior, ver porque se produce este error y asi cambiar cosas del codigo
 
 
 
 #### micro sesion 2:
 
+Empece investigando el error del puerto serial usando chatgpt y su respuesta fue la siguiente:
 
+El error "Error al inicializar la comunicación serial: Error: Failed to execute 'requestPort' on 'Serial': Must be handling a user gesture to show a permission request" indica que el navegador no permite la solicitud de permisos para acceder al puerto serial debido a la falta de interacción del usuario.
+
+Para resolver este problema, necesitas asegurarte de que la solicitud de permisos para acceder al puerto serial se realice en respuesta a una acción del usuario, como hacer clic en un botón. Aquí hay un enfoque para hacerlo:
+
+Agrega un botón en tu página HTML para iniciar la comunicación serial.
+
+Configura un evento de clic en ese botón para iniciar la comunicación serial en tu código de p5.js.
+
+Aquí hay un ejemplo de cómo podrías modificar tu código de p5.js para lograr esto:
+
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P5.js Serial Communication</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script>
+        // Variables
+        var xPlayer = 50; // Posición inicial del jugador (círculo)
+        var yPlayer = 50;
+        var playerRadius = 10; // Radio del jugador
+        var mazeWalls = []; // Array para almacenar las paredes del laberinto
+
+        // Variables para la comunicación serial con micro:bit
+        let serial;
+        let message = '';
+
+        // Función para configurar el lienzo y las paredes del laberinto
+        function setup() {
+            createCanvas(400, 400);
+            // Definir las paredes del laberinto
+            // (código de configuración del laberinto)
+        }
+
+        // Iniciar la comunicación serial al hacer clic en el botón
+        function initSerial() {
+            serial = serial(); // Inicializa la comunicación serial
+            serial.on('list', printList);
+            serial.on('connected', serverConnected);
+            serial.on('open', portOpen);
+            serial.on('data', serialEvent);
+            serial.on('error', serialError);
+            serial.on('close', portClose);
+            serial.open({ baudrate: 115200 });
+        }
+
+        // Resto del código de p5.js...
+
+        // Funciones de comunicación serial...
+    </script>
+</head>
+<body>
+    <button id="startButton" onclick="initSerial()">Iniciar Comunicación Serial</button>
+</body>
+</html>
+```
 
 
 
 #### micro sesion 3:
 
+En esta microsesion hice cambios en el codigo del microphyton para que cuando se detecte un movimiento mediande la comunicacion serial este se muestre en los leds del microbits, por ejemplo si la pelota se mueve hacia la izquierda se muestre una flecha izquierda en los leds, el codigo es el siguiente:
+
+```py
+
+from microbit import *
+
+uart.init(baudrate=115200)
+
+# Bucle principal
+while True:
+    # Leer los datos disponibles en el puerto UART
+    if uart.any():
+        # Leer el mensaje recibido
+        data = uart.read()
+        if data is not None:
+            # Decodificar el mensaje recibido
+            message = data.decode().strip()
+            
+            # Mover la pelota según el mensaje recibido
+            if message == 'left':
+                display.show(Image.ARROW_W)
+                sleep(100)
+                display.clear()
+            elif message == 'right':
+                display.show(Image.ARROW_E)
+                sleep(100)
+                display.clear()
+            elif message == 'up':
+                display.show(Image.ARROW_N)
+                sleep(100)
+                display.clear()
+            elif message == 'down':
+                display.show(Image.ARROW_S)
+                sleep(100)
+                display.clear()
+
+```
 
 
 
 
 #### micro sesion 4: cierre
+
+En esta sesion cambie y quite el error que me salia antes, sin embargo debo probar esto con el microbit para saber si la comunicacion es exitosa, en esa sesion no pude ya que la estoy realizando desde casa porque no pude asistir al salon
