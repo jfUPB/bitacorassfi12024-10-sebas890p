@@ -689,6 +689,17 @@ En esta sesion pude finalizar la experimentacion de las paredes del laberinto y 
 
 
 
+### Sesión 3: jueves marzo 14
+
+#### micro sesion 1: apertura
+
+#### micro sesion 2:
+
+#### micro sesion 3:
+
+#### micro sesion 4:
+
+#### micro sesion 5: cierre
 
 
 
@@ -857,3 +868,18 @@ while True:
 #### micro sesion 4: cierre
 
 En esta sesion cambie y quite el error que me salia antes, sin embargo debo probar esto con el microbit para saber si la comunicacion es exitosa, en esa sesion no pude ya que la estoy realizando desde casa porque no pude asistir al salon
+
+
+### Sesión 3: jueves marzo 21
+
+#### micro sesion 1: apertura
+
+#### micro sesion 2:
+
+#### micro sesion 3:
+
+#### micro sesion 4:
+
+#### micro sesion 5: cierre
+
+
