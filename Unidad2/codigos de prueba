@@ -1,1 +1,212 @@
+```js
+// Variables
+var xPlayer = 50; // Posición inicial del jugador (círculo)
+var yPlayer = 50;
+var playerRadius = 10; // Radio del jugador
+var mazeWalls = []; // Array para almacenar las paredes del laberinto
+
+// Variables para la comunicación serial con micro:bit
+let serial;
+let message = '';
+
+// Función para configurar el lienzo y las paredes del laberinto
+function setup() {
+  createCanvas(400, 400);
+  // Definir las paredes del laberinto
+  mazeWalls.push(new Wall(0, 0, 400, 10)); // Pared superior
+  mazeWalls.push(new Wall(0, 390, 400, 10)); // Pared inferior
+  mazeWalls.push(new Wall(0, 0, 10, 400)); // Pared izquierda
+  mazeWalls.push(new Wall(390, 0, 10, 400)); // Pared derecha
+  mazeWalls.push(new Wall(50, 50, 100, 10));
+  mazeWalls.push(new Wall(50, 200, 100, 10));
+  mazeWalls.push(new Wall(150, 50, 10, 150));
+  mazeWalls.push(new Wall(200, 50, 10, 100));
+  mazeWalls.push(new Wall(200, 50, 100, 10));
+  mazeWalls.push(new Wall(300, 50, 10, 150));
+  mazeWalls.push(new Wall(240, 150, 60, 10));
+  mazeWalls.push(new Wall(300, 150, 10, 90));
+  mazeWalls.push(new Wall(250, 240, 60, 10));
+  mazeWalls.push(new Wall(250, 240, 10, 100));
+  mazeWalls.push(new Wall(250, 340, 100, 10));
+  mazeWalls.push(new Wall(150, 200, 10, 60));
+  mazeWalls.push(new Wall(150, 200, 90, 10));
+  mazeWalls.push(new Wall(150, 290, 10, 100));
+  mazeWalls.push(new Wall(50, 290, 10, 100));
+  mazeWalls.push(new Wall(200, 290, 10, 100));
+
+  // Configurar la comunicación serial con el micro:bit
+  initSerial();
+}
+
+// Inicializar la comunicación serial
+async function initSerial() {
+  try {
+    const port = await navigator.serial.requestPort();
+    serial = port;
+    reader = port.readable.getReader();
+    readLoop();
+  } catch (err) {
+    console.error('Error al inicializar la comunicación serial:', err);
+  }
+}
+
+async function readLoop() {
+  try {
+    while (true) {
+      const { value, done } = await reader.read();
+      if (done) {
+        console.log('Lectura terminada', done);
+        reader.releaseLock();
+        break;
+      }
+      const decoder = new TextDecoderStream();
+      const text = value.pipeThrough(decoder);
+      const reader = text.getReader();
+      while (true) {
+        const { value, done } = await reader.read();
+        if (done) {
+          reader.releaseLock();
+          break;
+        }
+        handleMessage(value);
+      }
+    }
+  } catch (err) {
+    console.error('Error en el bucle de lectura:', err);
+  }
+}
+
+function handleMessage(value) {
+  const message = value.trim();
+  console.log('Mensaje recibido:', message);
+  // Manejar el mensaje recibido, por ejemplo, mover al jugador
+}
+
+// Función para dibujar el laberinto y el jugador
+function draw() {
+  background(0); // Fondo negro
+
+  // Dibujar las paredes del laberinto
+  for (let wall of mazeWalls) {
+    wall.display();
+  }
+
+  // Dibujar el jugador (círculo)
+  fill('#d9c3f7');
+  ellipse(xPlayer, yPlayer, playerRadius * 2, playerRadius * 2);
+
+  // Mover el jugador según los mensajes recibidos del micro:bit
+  // Se puede manejar en handleMessage(value)
+}
+
+// Clase para representar las paredes del laberinto
+class Wall {
+  constructor(x, y, width, height) {
+    this.x = x;
+    this.y = y;
+    this.width = width;
+    this.height = height;
+  }
+
+  display() {
+    fill('#ffffff'); // Color de las paredes
+    rect(this.x, this.y, this.width, this.height);
+  }
+
+  collides(x, y, radius) {
+    // Verificar si el jugador colisiona con la pared
+    // (implementa la lógica de colisión aquí)
+    return false; // Retorna true si hay colisión, false en caso contrario
+  }
+}
+
+```
+
+
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P5.js Serial Communication</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script>
+        // Variables
+        var xPlayer = 50; // Posición inicial del jugador (círculo)
+        var yPlayer = 50;
+        var playerRadius = 10; // Radio del jugador
+        var mazeWalls = []; // Array para almacenar las paredes del laberinto
+
+        // Variables para la comunicación serial con micro:bit
+        let serial;
+        let message = '';
+
+        // Función para configurar el lienzo y las paredes del laberinto
+        function setup() {
+            createCanvas(400, 400);
+            // Definir las paredes del laberinto
+            // (código de configuración del laberinto)
+        }
+
+        // Iniciar la comunicación serial al hacer clic en el botón
+        function initSerial() {
+            serial = serial(); // Inicializa la comunicación serial
+            serial.on('list', printList);
+            serial.on('connected', serverConnected);
+            serial.on('open', portOpen);
+            serial.on('data', serialEvent);
+            serial.on('error', serialError);
+            serial.on('close', portClose);
+            serial.open({ baudrate: 115200 });
+        }
+
+        // Resto del código de p5.js...
+
+        // Funciones de comunicación serial...
+    </script>
+</head>
+<body>
+    <button id="startButton" onclick="initSerial()">Iniciar Comunicación Serial</button>
+</body>
+</html>
+```
+
+
+```py
+from microbit import *
+
+uart.init(baudrate=115200)
+
+# Bucle principal
+while True:
+    # Leer los datos disponibles en el puerto UART
+    if uart.any():
+        # Leer el mensaje recibido
+        data = uart.read()
+        if data is not None:
+            # Decodificar el mensaje recibido
+            message = data.decode().strip()
+            
+            # Mover la pelota según el mensaje recibido
+            if message == 'left':
+                display.show(Image.ARROW_W)
+                sleep(100)
+                display.clear()
+            elif message == 'right':
+                display.show(Image.ARROW_E)
+                sleep(100)
+                display.clear()
+            elif message == 'up':
+                display.show(Image.ARROW_N)
+                sleep(100)
+                display.clear()
+            elif message == 'down':
+                display.show(Image.ARROW_S)
+                sleep(100)
+                display.clear()
+```
+
+
 
