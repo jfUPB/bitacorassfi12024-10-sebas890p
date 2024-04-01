@@ -50,7 +50,7 @@ En esta sesion me voy a dedicar a leer a fondo esta nueva unidad y si me queda t
    
 3. ¿Cuál es mi objetivo principal para esta sesión?
 
-Mi objetivo en esta sesion es entender esta nueva unidad a fondo
+Mi objetivo en esta sesion es entender esta nueva unidad a fondo.
 
 
 **Trabajo en concentración**
