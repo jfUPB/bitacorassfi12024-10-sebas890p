@@ -166,17 +166,53 @@ En esta micro sesion aprendi un poco de como funciona este proyecto para asi imp
 
 **Meta-aprendizaje:**
 
-1. ¿Qué he logrado en esta micro-sesión de trabajo? 
+1. ¿Qué he logrado en esta micro-sesión de trabajo?
+
+Partiendo de este proyecto: https://editor.p5js.org/jonfroehlich/sketches/fja8NHOKO
+
+Logre en esta microsesion personalizar el proyecto final, el cual tendra la misma funcion de dibujar pero ira conectado con el microbit usando 2 sensores distintos que seran el acelerometro y los pulsadores.
+
+con el acelerometro podre dibujar moviendo el microbit y con los pulsadores cambiar de color.
+
+y usare dos actuadores que seran los leds, para mostrar que color se esta dibujando y el buzzer para reproducir un sonido mientras se dibuje. 
+
+
 2. ¿Con qué dificultades me encontré y cómo las abordé?
+
+Las principales dificultades fueron pensar que cambiar o añadir de acuerdo a las restricciones. 
+tambien buscar la funcion de todos los pulsadores y actuaderos del microbit que mas que ser una dificultad era algo que queria tener claro.
+
+
+
 3. ¿Estoy más cerca de alcanzar el objetivo de la sesión? ¿Qué falta por hacer?
+
+Si, estoy mas cerca porque ya tengo mi reto personalizado.
+
+
 4. ¿Qué he aprendido o reforzado en esta micro-sesión?
+
+En esta sesion mas que aprender, aclare las funciones completas del microbit.
+
+
 
 **Cierre de sesión:**
 
 5. ¿He alcanzado los objetivos planteados al inicio? Si no, ¿por qué y qué puedo mejorar?
+
+Si, alcance el objetivo, puedo mejorar un poco en concentrarme mas al momento de hacerlo. 
+
 6. ¿Cuáles fueron los desafíos más significativos de hoy y cómo los superé?
+
+Realmente esta sesion no hubo un desafio grande ya que mas que todo era investigacion
+
 7. Basado en el trabajo de hoy, ¿qué insights importantes he ganado?
+
+Haber dejado varios conceptos claros.
+
 8. ¿Cuáles son los pasos siguientes para continuar avanzando en el proyecto?
+
+Debo seguir con las actividades y a la vez investigando y analizando los problemas. 
+
 
 ### Sesión 2
 
@@ -185,16 +221,51 @@ En esta micro sesion aprendi un poco de como funciona este proyecto para asi imp
 **Planeación:**
 
 1. ¿Qué voy a trabajar hoy?
+
+En esta sesion tengo planeado trabajar en las actividades que pueda 
+
+
 2. ¿Cuál es mi objetivo principal para esta sesión?
+
+Mi objetivo es analizar y completar las actividades para asi entender mejor la comunicacion binaria. 
+
+
 
 **Trabajo en concentración**
 
 **Meta-aprendizaje:**
 
 3. ¿Qué he logrado en esta micro-sesión de trabajo?
+
+En esta microsesion hice el analizis de la actividad 2 lo cual le pedi a chatgpt que me explicara el codigo, el cual me dio la siguiente explicacion:
+
+El código que has proporcionado utiliza la biblioteca struct de Python para empaquetar tres números de punto flotante (s1, s2, s3) en una secuencia de bytes, utilizando el formato big-endian (>) y el formato de representación de punto flotante (f). Luego, convierte estos bytes en una lista de números enteros y una lista de cadenas hexadecimales correspondientes a esos números enteros.
+
+
+y respondi a la siguiente pregunta:
+
+
+¿Qué conclusión puedes sacar hasta este punto? Escribe tu análisis en la bitácora.
+
+La conclusión hasta este punto es que los valores de hexinfo deberian representar la forma en que los números de punto flotante son representados en la memoria de la computadora en formato hexadecimal despues de ser empaquetados por struct.pack(). Comparando estos valores hexadecimales con los obtenidos al ingresar los números en el campo Decimal Representation del sitio web, observo como los numeros de punto flotante se representan internamente en memoria en formato hexadecimal y cómo este proceso puede variar según la implementación o arquitectura de la computadora.
+
+
+
 4. ¿Con qué dificultades me encontré y cómo las abordé?
+
+la mayor dificultad fue entender bien el codigo por lo que le pedi a chatgpt que me lo edxplicara
+
+
 5. ¿Estoy más cerca de alcanzar el objetivo de la sesión? ¿Qué falta por hacer?
-6. ¿Qué he aprendido o reforzado en esta micro-sesión? 
+
+
+Si, porque realizar las actividades me ayuda a acercarme al objetivo
+
+
+6. ¿Qué he aprendido o reforzado en esta micro-sesión?
+
+Aprendi varios conceptos que se encuentran en el codigo como por ejemplo el formato big-endian
+
 
 #### Micro-sesión 2 (25 minutos)
 
@@ -203,9 +274,32 @@ En esta micro sesion aprendi un poco de como funciona este proyecto para asi imp
 **Meta-aprendizaje:**
 
 1. ¿Qué he logrado en esta micro-sesión de trabajo?
+
+En esta micro sesion trabaje en esta pregunta 
+Nota en la línea data = struct.pack('>3f',s1,s2,s3) el signo >. Repite todos los pasos anteriores pero esta vez cambia > por <. ¿Qué conclusión sacas hasta ahora.
+
+Al cambiar el signo > por < en la línea data = struct.pack('<3f', s1, s2, s3), estamos indicando que queremos utilizar el formato little-endian en lugar de big-endian para empaquetar los números de punto flotante.
+
+La conclusión hasta este punto es que el formato de empaquetamiento (big-endian o little-endian) afecta cómo se almacenan los bytes en la memoria de la computadora, lo que puede tener implicaciones en la forma en que se interpretan los datos y cómo se realizan las operaciones con ellos, ya que note que cada signo almacena los datos en un orden diferente, por lo que pude observar un signo los ordena de mayor a menor y el otro de menor a mayor.
+
 2. ¿Con qué dificultades me encontré y cómo las abordé?
+
+Realmenta no tuve alguna dificultad grande, aborde el problema haciendo el ejercicio en cmd y observando los resultados.
+
+
+
 3. ¿Estoy más cerca de alcanzar el objetivo de la sesión? ¿Qué falta por hacer?
-4. ¿Qué he aprendido o reforzado en esta micro-sesión? 
+
+
+Si estoy mas cerca, me hace falta responder las otras 2 preguntas
+
+
+4. ¿Qué he aprendido o reforzado en esta micro-sesión?
+
+que el signo < se traduce como little-endian y puede cambiar el orden de como se almacena en la memoria
+
+
+
 
 #### Micro-sesión 3 (25 minutos)
 
@@ -214,9 +308,34 @@ En esta micro sesion aprendi un poco de como funciona este proyecto para asi imp
 **Meta-aprendizaje:**
 
 1. ¿Qué he logrado en esta micro-sesión de trabajo?
+
+En esta micro sesion trabaje esta pregunta:
+
+Vas a buscar qué es BIG ENDIAN y LITTLE ENDIAN.
+
+Big Endian y Little Endian son dos formatos de ordenación de bytes utilizados para almacenar datos en la memoria de una computadora. Estos términos provienen de la novela "Los viajes de Gulliver" de Jonathan Swift, donde los personajes Liliputienses estaban divididos entre aquellos que rompían los huevos por el extremo grande (Big Endian) y aquellos que lo hacían por el extremo pequeño (Little Endian).
+
+La diferencia entre Big Endian y Little Endian radica en el orden en que se almacenan los bytes de datos multibyte (como números enteros, números de punto flotante, etc.) en la memoria de la computadora.
+
+Big Endian: En este formato, los bytes más significativos (el byte más grande) se almacenan primero en la dirección de memoria más baja, seguidos de los bytes menos significativos. Es decir, el byte más significativo se almacena en la posición más baja de memoria. Este es el enfoque utilizado por sistemas como el formato de red TCP/IP.
+
+Little Endian: En este formato, los bytes menos significativos (el byte más pequeño) se almacenan primero en la dirección de memoria más baja, seguidos de los bytes más significativos. Es decir, el byte menos significativo se almacena en la posición más baja de memoria. Este es el enfoque utilizado por arquitecturas como x86 y x86-64.
+
 2. ¿Con qué dificultades me encontré y cómo las abordé?
+
+Estuve buscando la definiciones de estos conceptos en internet pero los articulos o las definiciones que encontraba me parecian confusos asi que procedi a preguntarle a chatgpt que me parece que es la mejor herramientab para definir conceptos.
+
+
 3. ¿Estoy más cerca de alcanzar el objetivo de la sesión? ¿Qué falta por hacer?
-4. ¿Qué he aprendido o reforzado en esta micro-sesión? 
+
+Si estoy mas cerca, me hace falta responder la ultima pregunta de la actividad
+
+
+4. ¿Qué he aprendido o reforzado en esta micro-sesión?
+
+Reforce en que mi conclusion de  BIG ENDIAN y LITTLE ENDIAN en la actividad si era correcta ya que uno almacena los datos desde el mayor y el otro desde el menor.
+
+
 
 #### Micro-sesión 4. (25 minutos)
 
@@ -225,16 +344,46 @@ En esta micro sesion aprendi un poco de como funciona este proyecto para asi imp
 **Meta-aprendizaje:**
 
 1. ¿Qué he logrado en esta micro-sesión de trabajo?
+
+En el caso anterior puedes decir cuál es el ENDIAN para > y para <.
+
+Para > es Big Endian: En este formato, los bytes más significativos (el byte más grande) se almacenan primero en la dirección de memoria más baja, seguidos de los bytes menos significativos. Es decir, el byte más significativo se almacena en la posición más baja de memoria.
+
+
+Para < es Little Endian: En este formato, los bytes menos significativos (el byte más pequeño) se almacenan primero en la dirección de memoria más baja, seguidos de los bytes más significativos. Es decir, el byte menos significativo se almacena en la posición más baja de memoria.
+
+
 2. ¿Con qué dificultades me encontré y cómo las abordé?
+
+la verdad la mayor dificultad es que no entendi la pregunta muy bien, asi que lo aborde respondiendola como creo se debe responder. 
+
+
 3. ¿Estoy más cerca de alcanzar el objetivo de la sesión? ¿Qué falta por hacer?
+
+Si estoy mas cerca, debo seguir realizando las actividades
+
+
 4. ¿Qué he aprendido o reforzado en esta micro-sesión?
+
+Reforce la simbologia y conceptos de los Endian. 
+
 
 **Cierre de sesión:**
 
 5. ¿He alcanzado los objetivos planteados al inicio? Si no, ¿por qué y qué puedo mejorar?
+
+
+
+
 6. ¿Cuáles fueron los desafíos más significativos de hoy y cómo los superé?
+
+
 7. Basado en el trabajo de hoy, ¿qué insights importantes he ganado?
+
+
 8. ¿Cuáles son los pasos siguientes para continuar avanzando en el proyecto?
+
+
 
 ### Sesión 3
 
