@@ -2,7 +2,7 @@
 
 ## ¿Cómo voy?
 
-- [ ] Tengo mi reto personalizado. 
+- [x ] Tengo mi reto personalizado. 
 - [ ] Terminé la actividad 1 de investigar. 
 - [ ] Terminé la actividad 2 de investigar.
 - [ ] Terminé la actividad 3 de investigar.
