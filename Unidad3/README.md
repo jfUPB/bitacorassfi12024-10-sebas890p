@@ -2,7 +2,7 @@
 
 ## ¿Cómo voy?
 
-- [x ] Tengo mi reto personalizado. 
+- [x] Tengo mi reto personalizado. 
 - [ ] Terminé la actividad 1 de investigar. 
 - [ ] Terminé la actividad 2 de investigar.
 - [ ] Terminé la actividad 3 de investigar.
@@ -392,6 +392,9 @@ Reforce la simbologia y conceptos de los Endian.
 **Planeación:**
 
 1. ¿Qué voy a trabajar hoy?
+
+
+
 2. ¿Cuál es mi objetivo principal para esta sesión?
 
 **Trabajo en concentración**
@@ -449,19 +452,41 @@ Reforce la simbologia y conceptos de los Endian.
 
 1. ¿Cuál será el propósito de la sesión de hoy?
 
-> Escribe aquí
+En esta sesion tengo planeado analizar y llevar a cabo la actividad 3 la cual es un experimento con el microbit en el cual estare usando el microcontrolador en clase para poder experimentar.
+
+Procedi viendo los resultados que me daba en web terminal que son los seguientes 
+
+![image](https://github.com/jfUPB/bitacorassfi12024-10-sebas890p/assets/110270011/1481b494-5705-485f-9c13-17ddae982d85)
+
+De estos resultados puedo observar que son los mismos puntos flotantes que se trabajaron en la actividad 1 asi que a partir de esto me surgio la pregunta de si podia hacer otra estructura de datos pero que esta ves se envien cuando se presione b, asi que empece a experimentar y quedo asi:
+
+![image](https://github.com/jfUPB/bitacorassfi12024-10-sebas890p/assets/110270011/4e842f4b-0d6c-4314-8963-2976a9937f60)
+
+y los resultados en el serial fueron estos:
+
+![image](https://github.com/jfUPB/bitacorassfi12024-10-sebas890p/assets/110270011/a02ba861-b060-4f1d-9d5d-0b86d836399b)
+
+
+Si pude crear otra estructura de datos y enviarla con otro pulsador
+
  
 2. ¿Cuáles fueron los desafíos más significativos de la sesión y cómo los superé?
 
-> Escribe aquí
+El desafio mas significativo de esta sesion pienso que fue entender el real funcionamiento de este codigo o mas que entender comprender lo que se puede hacer con el codigo, pude superarlo leeyendolo y experimentando para asi sacar varias conclusiones. 
+
+
 
 3. Basado en el trabajo de la sesión, ¿Qué aprendí o qué conclusión saco o cuál es la síntesis?
 
-> Escribe aquí
+
+ En esta sesion aprendi a como puedo mandar paquetes de estructuras de datos, que esta es la conclusion que saque de la actividad 3 que a partir de ese codigo se puede crear las estructuras de daros lo que cual sirve para limitar los datos que se envian. 
+
+
 
 4. ¿Cuáles son los pasos siguientes para continuar avanzando en el proyecto?
 
-> Escribe aquí
+Para avanzar en el proyecto debo seguir en el trabajo de investigacion analizando y haciendo las actividades para ya luego empezar a aplicar.  
+
 
 ### Sesión 2
 
