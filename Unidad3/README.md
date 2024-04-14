@@ -393,18 +393,55 @@ Reforce la simbologia y conceptos de los Endian.
 
 1. ¿Qué voy a trabajar hoy?
 
+En esta sesion autonoma tengo planeado trabajar en la actividad 4 y no en la 3 porque esta la quiero dejar para hacerla en clase para poder hacer pruebas con el microbit 
 
 
 2. ¿Cuál es mi objetivo principal para esta sesión?
 
-**Trabajo en concentración**
+
+Investigar analizar y responder las preguntas planteadas para dicha actividad.
+
+
 
 **Meta-aprendizaje:**
 
 3. ¿Qué he logrado en esta micro-sesión de trabajo?
+
+En esta micro sesion empece analizando el codigo para comprenderlo mejor 
+
+
+Inicialización de variables: Se declaran dos variables, port y connectBtn, que se usarán para la comunicación serial y para crear un botón de conexión, respectivamente.
+
+Función setup(): Esta función se llama una vez al principio del programa y se utiliza para inicializar configuraciones iniciales, como el lienzo de dibujo y la creación de los elementos de la interfaz de usuario, como el botón de conexión y el botón de envío.
+
+Función draw(): Esta función se llama repetidamente y se utiliza para dibujar y actualizar elementos en el lienzo. Aquí, se verifica si hay datos disponibles en el puerto serial. Si hay al menos 12 bytes disponibles, se leen esos bytes, se convierten en valores flotantes utilizando la función bytesToFloats() y se muestran en la pantalla. Además, el estado del botón de conexión se actualiza dependiendo de si el puerto está abierto o cerrado.
+
+Función connectBtnClick(): Esta función se ejecuta cuando se hace clic en el botón de conexión. Si el puerto no está abierto, se intenta abrir con una velocidad de transmisión de 115200 baudios (que es una velocidad de comunicación común para comunicación serial con Arduino). Si el puerto ya está abierto, se cierra.
+
+Función sendBtnClick(): Esta función se ejecuta cuando se hace clic en el botón de envío. Envía la cadena "Hello from p5.js" al dispositivo conectado a través del puerto serial.
+
+Función bytesToFloats(): Esta función toma un array de bytes como entrada y devuelve un array de números flotantes. Utiliza un DataView para interpretar los bytes como flotantes de 32 bits, ya que la comunicación serial suele enviar datos en forma de bytes.
+
+
+
 4. ¿Con qué dificultades me encontré y cómo las abordé?
+
+
+Analizar paso a paso el codigo, para esto me apoye de chatgpt
+
+
+
 5. ¿Estoy más cerca de alcanzar el objetivo de la sesión? ¿Qué falta por hacer?
-6. ¿Qué he aprendido o reforzado en esta micro-sesión? 
+
+
+Si estoy mas cerca 
+
+
+6. ¿Qué he aprendido o reforzado en esta micro-sesión?
+
+Aprendi como funciona el codigo 
+
+
 
 #### Micro-sesión 2 (25 minutos)
 
