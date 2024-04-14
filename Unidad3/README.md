@@ -450,9 +450,65 @@ Aprendi como funciona el codigo
 **Meta-aprendizaje:**
 
 1. ¿Qué he logrado en esta micro-sesión de trabajo?
+
+
+En esta micro sesion logre realizar el punto 1 de la actividad 4:  Analiza detenidamente cada parte del código anterior.
+
+
+Inicialización de variables:
+
+Aquí se declaran dos variables globales para almacenar el objeto de puerto serial (port) y el botón de conexión (connectBtn). Estas variables se utilizarán más adelante en el código.
+
+
+
+Función setup():
+
+Esta función se llama una vez al principio del programa y se utiliza para configurar el lienzo de dibujo, crear los botones de conexión y envío, y asignar funciones de clic a estos botones. El lienzo se crea con una resolución de 400x400 píxeles y un fondo de color gris claro.
+
+
+Función draw():
+
+
+
+La función draw() se llama continuamente en un bucle y se utiliza para actualizar la interfaz de usuario y procesar datos entrantes. Aquí, se verifica si hay al menos 12 bytes disponibles en el puerto serial. Si es así, se leen esos bytes y se procesan para mostrar los datos en la pantalla. Además, el texto del botón de conexión se actualiza según el estado del puerto.
+
+
+Función connectBtnClick():
+
+Esta función se llama cuando se hace clic en el botón de conexión. Si el puerto serial no está abierto, se intenta abrir con un nombre ('MicroPython') y una velocidad de transmisión (115200 baudios) específicos. Si el puerto ya está abierto, se cierra.
+
+
+Función sendBtnClick():
+
+
+Esta función se ejecuta cuando se hace clic en el botón de envío. Envía la cadena "Hello from p5.js" al dispositivo conectado a través del puerto serial.
+
+
+Función bytesToFloats():
+
+Esta función toma un array de bytes como entrada y devuelve un array de números flotantes. Utiliza un DataView para interpretar los bytes como flotantes de 32 bits, ya que la comunicación serial suele enviar datos en forma de bytes.
+
+
+
 2. ¿Con qué dificultades me encontré y cómo las abordé?
+
+
+La mayor dificultad fue analizar paso a paso cada linea del codigo
+
+
+
 3. ¿Estoy más cerca de alcanzar el objetivo de la sesión? ¿Qué falta por hacer?
-4. ¿Qué he aprendido o reforzado en esta micro-sesión? 
+
+si estoy mas cerca, me falta responder las otras preguntas de la actividad
+
+
+
+
+4. ¿Qué he aprendido o reforzado en esta micro-sesión?
+
+Aprendi linea a linea la funciones del codigo
+
+
 
 #### Micro-sesión 3 (25 minutos)
 
@@ -461,9 +517,39 @@ Aprendi como funciona el codigo
 **Meta-aprendizaje:**
 
 1. ¿Qué he logrado en esta micro-sesión de trabajo?
+
+
+En esta micro sesion trabajare en la pregunta 3 de la actividad ya que la 2 se trata de experimentar y quisiera hacerlo en clase con el microbit por lo tanto la pregunta 3 es : ¿Notaste en la función draw() la línea if(port.availableBytes() >= 12)? ¿De dónde sale ese número 12?
+
+
+En la línea if (port.availableBytes() >= 12) dentro de la función draw(), se está verificando si hay al menos 12 bytes de datos disponibles para leer del puerto serial en ese momento. Esta línea es crucial porque garantiza que el código solo intente leer datos del puerto serial cuando hay suficientes datos disponibles para procesar.
+
+El número 12 en esta línea es un valor arbitrario que se ha elegido con base en el contexto específico de la comunicación entre el código p5.js y el Arduino. Cuando se está comunicando con un dispositivo externo a través de un puerto serial, generalmente se envían datos en forma de bytes. La cantidad de bytes que se envían depende del formato de los datos y de la cantidad de información que se está transmitiendo en cada mensaje.
+
+En este caso, el código está esperando recibir un conjunto de datos específico del Arduino que ocupa exactamente 12 bytes. Este valor puede haber sido determinado en función del tipo y la cantidad de datos que el Arduino está enviando en cada transmisión. Por ejemplo, si el Arduino está enviando tres números de punto flotante (float) de 4 bytes cada uno, entonces el tamaño total de la transmisión sería de 12 bytes (3 * 4 = 12).
+
+
 2. ¿Con qué dificultades me encontré y cómo las abordé?
+
+
+No me encontre con dificultades 
+
+
+
+
 3. ¿Estoy más cerca de alcanzar el objetivo de la sesión? ¿Qué falta por hacer?
-4. ¿Qué he aprendido o reforzado en esta micro-sesión? 
+
+
+Si estoy mas cerca, me falta responder la 4ta pregunta para asi terminar la actividad
+
+
+
+
+4. ¿Qué he aprendido o reforzado en esta micro-sesión?
+
+Aprendi porque y como sale el numero 12 en el codigo
+
+
 
 #### Micro-sesión 4. (25 minutos)
 
@@ -472,16 +558,66 @@ Aprendi como funciona el codigo
 **Meta-aprendizaje:**
 
 1. ¿Qué he logrado en esta micro-sesión de trabajo?
+
+
+En esta micro sesion me dedique a trabajar en la pregunta 4 que es: Y si la cantidad de datos que envía el micro:bit es variable?
+
+
+Si la cantidad de datos enviados por el Micro:bit es variable, entonces la condición if (port.availableBytes() >= 12) en la función draw() podría necesitar ser ajustada para manejar esta variabilidad. Aquí hay algunas opciones para abordar este escenario:
+
+Establecer una condición basada en la cantidad mínima de bytes esperados: En lugar de verificar si hay exactamente 12 bytes disponibles, podrías cambiar la condición para verificar si hay al menos una cierta cantidad mínima de bytes disponibles para leer, lo que podría ser un número menor o mayor que 12. Por ejemplo, podrías usar algo como if (port.availableBytes() >= MIN_BYTES) donde MIN_BYTES es una variable que puedes ajustar según las necesidades de tu aplicación.
+
+Implementar un mecanismo de delimitación de datos: Si la cantidad de datos enviados por el Micro:bit varía pero hay una manera de delimitar los datos, es decir, si hay un carácter o secuencia de caracteres específicos que indican el inicio o el fin de un conjunto de datos, podrías modificar el código para buscar estos delimitadores y leer los datos entre ellos.
+
+Utilizar un buffer dinámico para almacenar y procesar los datos: En lugar de esperar una cantidad específica de bytes, podrías implementar un buffer dinámico donde los datos se acumulan a medida que se reciben del Micro:bit, y luego procesar esos datos cuando se haya recibido una cantidad suficiente o cuando se haya alcanzado un punto de delimitación.
+
+
+
+
+
 2. ¿Con qué dificultades me encontré y cómo las abordé?
+
+
+No tuve dificultades
+
+
+
 3. ¿Estoy más cerca de alcanzar el objetivo de la sesión? ¿Qué falta por hacer?
+
+
+Si, debo realizar las 2 actividades faltantes y asi termino la fase de investigacion
+
+
+
 4. ¿Qué he aprendido o reforzado en esta micro-sesión?
+
+
+Aprendi a como se puede realizar el codigo o programa teniendo una cantidad variable de datos
+
+
 
 **Cierre de sesión:**
 
 5. ¿He alcanzado los objetivos planteados al inicio? Si no, ¿por qué y qué puedo mejorar?
+
+Si los alcance porque pude completar la actividad que habia planeado 
+
+
 6. ¿Cuáles fueron los desafíos más significativos de hoy y cómo los superé?
+
+Los desafios que tuve en cada muicro sesion los escribi y en cada una de ellas
+
+
 7. Basado en el trabajo de hoy, ¿qué insights importantes he ganado?
+
+
+
+
 8. ¿Cuáles son los pasos siguientes para continuar avanzando en el proyecto?
+
+
+
+
 
 ## Semana 11
 
