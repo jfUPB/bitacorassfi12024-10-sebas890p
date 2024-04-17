@@ -665,37 +665,239 @@ Para avanzar en el proyecto debo seguir en el trabajo de investigacion analizand
 
 1. ¿Cuál será el propósito de la sesión de hoy?
 
-> Escribe aquí
+En esta sesion tengo como proposito realizar la actividad 5 sin embargo la estoy haciendo desde la casa por lo cual no podre hacer lo experimentos que quisiera con el microbit como si podria en clase por lo que deje los codigos hechos para que en la proxima clase solo sea de probarlos a ver si todo funciona bien los codigos son los siguientes:
+
+```js
+
+let serial;
+let connectBtn;
+let connected = false;
+
+function setup() {
+    createCanvas(400, 400);
+    background(220);
+    serial = new p5.SerialPort();
+    connectBtn = createButton('Connect to Arduino');
+    connectBtn.position(80, 200);
+    connectBtn.mousePressed(connectBtnClick);
+    let sendBtn = createButton('Send hello');
+    sendBtn.position(220, 200);
+    sendBtn.mousePressed(sendBtnClick);
+
+    serial.on('data', gotData);
+}
+
+function draw() {
+    if (connected) {
+        if (serial.available() >= 12) {
+            let arr = serial.readBytes(12);
+            print(arr);
+            background(220);
+            const sensors = bytesToFloats(arr);
+            sensor1 = sensors[0].toFixed(2);
+            sensor2 = sensors[1].toFixed(2);
+            sensor3 = sensors[2].toFixed(2);
+            print(sensor1);
+            print(sensor2);
+            print(sensor3);
+
+            text(sensor1, 10, height - 60);
+            text(sensor2, 10, height - 40);
+            text(sensor3, 10, height - 20);
+        }
+    }
+    if (!connected) {
+        connectBtn.html('Connect to Arduino');
+    } else {
+        connectBtn.html('Disconnect');
+    }
+}
+
+function connectBtnClick() {
+    if (!connected) {
+        serial.open('MicroPython', 115200);
+    } else {
+        serial.close();
+    }
+}
+
+function sendBtnClick() {
+    if (connected) {
+        serial.write("Hello from p5.js\n");
+    } else {
+        print("Not connected to Arduino.");
+    }
+}
+
+function gotData() {
+    connected = true;
+}
+
+function bytesToFloats(bytes) {
+    const buffer = new Uint8Array(bytes).buffer;
+    const view = new DataView(buffer);
+    const floats = [];
+
+    for (let i = 0; i < bytes.length; i += 4) {
+        floats.push(view.getFloat32(i));
+    }
+
+    return floats;
+}
+```
+
+```py
+
+from microbit import *
+import struct
+
+uart.init(baudrate=115200)
+
+BUFFER_SIZE = 12
+buffer = bytearray(BUFFER_SIZE)
+
+while True:
+    if uart.any():
+        uart.readinto(buffer)
+        data = struct.unpack('>3f', buffer)
+        display.scroll(str(data))
+```
+
+
+```html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serial Communication with p5.js</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.serialport.js"></script>
+</head>
+<body>
+    <h1>Serial Communication with p5.js</h1>
+    <p>Received Data:</p>
+    <p id="receivedData"></p>
+
+    <script>
+        let serial;
+        let receivedDataElement;
+
+        function setup() {
+            receivedDataElement = document.getElementById('receivedData');
+            serial = new p5.SerialPort();
+            serial.on('data', gotData);
+            serial.open('COM3'); // Cambiar al puerto correcto
+        }
+
+        function gotData() {
+            let data = serial.readBytes();
+            if (data !== null) {
+                let floatArray = new Float32Array(data.buffer);
+                receivedDataElement.innerHTML = 'Received Data: ' + floatArray.join(', ');
+            }
+        }
+    </script>
+</body>
+</html>
+```
+
+
+El proposito es que se pueda mandar datos binarios desde p5.js y que estos se reflejen en el microbit, en clase hare las pruebas y experimentos correspondientes. 
+
+
+
  
 2. ¿Cuáles fueron los desafíos más significativos de la sesión y cómo los superé?
 
-> Escribe aquí
+El desafio mas signficativo fue integrar los programas en binario pero lo supere partiendo de una base con la ayuda de chat gpt y luego haciendo algunos cambios 
 
 3. Basado en el trabajo de la sesión, ¿Qué aprendí o qué conclusión saco o cuál es la síntesis?
 
-> Escribe aquí
+aprendi a como a integrar los programas enviando datos en binario (bytes) y como conclusion saco que es un poco parecido al ACSSI pero esta vez es todo un poco mas manual a lo que me refiero es que se debe tener cuidado con la cantidad de datos que si quiera mandar 
 
 4. ¿Cuáles son los pasos siguientes para continuar avanzando en el proyecto?
 
-> Escribe aquí
+Los pasos a seguir es poder experimentar con los codigos en clase y luego sacar mas conclusiones
 
 ### Sesión 3
 
 1. ¿Cuál será el propósito de la sesión de hoy?
 
-> Escribe aquí
+El proposito de la sesion autonoma de hoy es terminar con la investigacion y por ultimo me falta dejar en claro lo siguiente :
+
+¿Cuál es la diferencia entre el modelo de comunicación por eventos y el modelo cliente-servidor?
+
+El modelo de comunicación por eventos y el modelo cliente-servidor son dos enfoques diferentes para gestionar la comunicación entre sistemas o componentes
+
+Modelo de Comunicación por Eventos:
+
+Definición:
+
+En el modelo de comunicación por eventos, los sistemas intercambian información en respuesta a eventos específicos que ocurren en uno o más de los sistemas
+Los eventos pueden ser acciones del usuario, cambios de estado en el sistema, o cualquier otra cosa que desencadene una acción en un sistema
+
+Características:
+
+La comunicación es asincrónica y basada en eventos.
+
+Los sistemas pueden reaccionar a eventos y tomar acciones apropiadas en función de ellos
+Los sistemas pueden emitir eventos para notificar a otros sistemas sobre cambios o acciones importantes
+
+Ejemplo:
+
+
+Un navegador web que responde a eventos del usuario como clics de ratón, pulsaciones de teclas, y cargas de página.
+Un servidor de chat que envía mensajes a los clientes cuando se reciben nuevos mensajes de otros usuarios.
+
+Modelo Cliente-Servidor:
+
+Definición:
+
+En el modelo cliente-servidor, los sistemas están organizados en dos roles distintos: el cliente y el servidor
+El cliente solicita recursos o servicios al servidor, y el servidor responde a esas solicitudes proporcionando los recursos o servicios solicitados
+
+Características:
+
+La comunicación es generalmente síncrona, donde el cliente envía una solicitud al servidor y espera una respuesta
+El servidor escucha las solicitudes de los clientes y responde en consecuencia
+El cliente y el servidor pueden estar en diferentes dispositivos o sistemas, y se comunican a través de una red
+
+Ejemplo:
+
+Un navegador web (cliente) que solicita páginas web a un servidor web y muestra el contenido recibido
+Una aplicación móvil (cliente) que solicita datos de un servidor de base de datos para mostrar información al usuario
+
+Diferencias:
+
+Tipo de Comunicación:
+
+El modelo de comunicación por eventos se basa en la comunicación asincrónica y orientada a eventos, donde los sistemas reaccionan a eventos específicos
+El modelo cliente-servidor implica comunicación síncrona, donde el cliente envía solicitudes al servidor y espera respuestas
+
+Organización de Roles:
+
+En el modelo de comunicación por eventos, no hay roles fijos como cliente y servidor. Los sistemas pueden actuar como emisores o receptores de eventos según sea necesario
+En el modelo cliente-servidor, los sistemas están organizados en dos roles distintos: el cliente que solicita servicios y el servidor que los proporciona
+
+Intercambio de Datos:
+
+En el modelo de comunicación por eventos, los sistemas pueden enviar y recibir datos en respuesta a eventos específicos sin necesidad de una solicitud explícita
+En el modelo cliente-servidor, los datos se intercambian en respuesta a solicitudes explícitas enviadas por el cliente al servidor y las respuestas correspondientes del servidor al cliente
+
  
 2. ¿Cuáles fueron los desafíos más significativos de la sesión y cómo los superé?
 
-> Escribe aquí
+No tuve desafios por lo que fue pura investigacion
 
 3. Basado en el trabajo de la sesión, ¿Qué aprendí o qué conclusión saco o cuál es la síntesis?
 
-> Escribe aquí
+Como conclusion saco que cada modelo de comunicación por eventos y el modelo cliente-servidor depende de las necesidades específicas de la aplicación y de los requisitos de comunicación entre los sistemas o componentes involucrados. Cada modelo tiene sus propias ventajas y desventajas, y es importante seleccionar el enfoque más adecuado para cada situación particular, si embargo el modelo de comunicación por eventos ofrece la flexibilidad y la capacidad de respuesta necesarias para manejar eficazmente la comunicación binaria entre el dispositivo Micro:bit y la aplicación p5.js, especialmente cuando la comunicación es asincrónica y basada en eventos
 
 4. ¿Cuáles son los pasos siguientes para continuar avanzando en el proyecto?
 
-> Escribe aquí
+Para avanzar en el proyecto debo empezar a aplicar la investigacion
 
 
 ## Semana 12
