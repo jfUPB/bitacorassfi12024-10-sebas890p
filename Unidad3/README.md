@@ -3,11 +3,11 @@
 ## ¿Cómo voy?
 
 - [x] Tengo mi reto personalizado. 
-- [ ] Terminé la actividad 1 de investigar. 
-- [ ] Terminé la actividad 2 de investigar.
-- [ ] Terminé la actividad 3 de investigar.
-- [ ] Terminé la actividad 4 de investigar.
-- [ ] Terminé la actividad 5 de investigar.
+- [x] Terminé la actividad 1 de investigar. 
+- [x] Terminé la actividad 2 de investigar.
+- [x] Terminé la actividad 3 de investigar.
+- [x] Terminé la actividad 4 de investigar.
+- [x] Terminé la actividad 5 de investigar.
 - [ ] Terminé la fase de aplicar.
 - [ ] Terminé la documentación de cierre.
 
