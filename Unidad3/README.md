@@ -924,19 +924,24 @@ Para avanzar en el proyecto debo empezar a aplicar la investigacion
 
 1. ¿Cuál será el propósito de la sesión de hoy?
 
-> Escribe aquí
- 
+El proposito de esta clase es trabajar en la nueva actividad propuesta por el profesor que es la 6 la cual trabajamos junto a el 
+
+![image](https://github.com/jfUPB/bitacorassfi12024-10-sebas890p/assets/110270011/a410a6aa-09c0-4102-b0b7-d661862ec459)
+
+En este experimento le mandamos 3 sensores al micro bit y la idea es que recibiera 2 sensores 8 bits en total 
+
+
 2. ¿Cuáles fueron los desafíos más significativos de la sesión y cómo los superé?
 
-> Escribe aquí
+En esta sesion no hubo desafios ya que fue una sesion dirigida por el profesor 
 
 3. Basado en el trabajo de la sesión, ¿Qué aprendí o qué conclusión saco o cuál es la síntesis?
 
-> Escribe aquí
+Aprendi a como enviar datos flotantes al microbit y a la vez reforzarlo con los experimentos 
 
 4. ¿Cuáles son los pasos siguientes para continuar avanzando en el proyecto?
 
-> Escribe aquí
+Para seguir avanzando debo tomar lo aprendido y empezar a aplicarlo. 
 
 ### Sesión 3
 
