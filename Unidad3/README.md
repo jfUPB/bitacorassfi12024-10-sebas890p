@@ -906,19 +906,30 @@ Para avanzar en el proyecto debo empezar a aplicar la investigacion
 
 1. ¿Cuál será el propósito de la sesión de hoy?
 
-> Escribe aquí
+El proposito de esta sesion fue hacer hacer pruebas y experimentar con el microbit la comunicacion entre p5.js y el microbit, usando los codigos que tengo evidenciados en la semana pasada de la bitacora y con los codigos proporcinados por el profesor. 
+
  
 2. ¿Cuáles fueron los desafíos más significativos de la sesión y cómo los superé?
 
-> Escribe aquí
+En esta sesion tuve varios desafios sobre errores en el codigo, si bien el codigo del microbit esta funcinando bien ya que envia los datos que quiero porque hice pruebas en el puerto serial, no encuentro la forma de poder conectar el p5.js con el microbit para que este reciba los datos que le estoy enviando ya que me sale el siguiente error: 
+
+![image](https://github.com/jfUPB/bitacorassfi12024-10-sebas890p/assets/110270011/780a1884-96ef-4264-8df5-a4384312df16)
+
+
+trate de superarlo buscando en la documentacion oficial https://p5js.org/es/examples/data-variable-scope.html  y en chatgpt entendi de lo que se trata el problema pero no supe como solucionarlo  
+
 
 3. Basado en el trabajo de la sesión, ¿Qué aprendí o qué conclusión saco o cuál es la síntesis?
 
-> Escribe aquí
+Basado en esta sesion como clusion saco que debo seguir experimentando aun mas con la comunicacion entre p5.ja y microbit para hallar la forma de solucionar el error 
+
+
 
 4. ¿Cuáles son los pasos siguientes para continuar avanzando en el proyecto?
 
-> Escribe aquí
+Los pasos a seguir para avanzar en el proyecto van acorde a la conclusion de la sesion que es seguir experimentando he encontrando soluciones 
+
+
 
 ### Sesión 2
 
@@ -945,21 +956,25 @@ Para seguir avanzando debo tomar lo aprendido y empezar a aplicarlo.
 
 ### Sesión 3
 
+
 1. ¿Cuál será el propósito de la sesión de hoy?
 
-> Escribe aquí
+El proposito de esta sesion autonoma en casa fue investigar sobre la comunicacion en entre los programas ya que no cuento con el controlador para seguir experimentando asi puedo seguir con el paso siguiente que necesito aprender para poder avanzar 
+
+
  
 2. ¿Cuáles fueron los desafíos más significativos de la sesión y cómo los superé?
 
-> Escribe aquí
+
+
+
 
 3. Basado en el trabajo de la sesión, ¿Qué aprendí o qué conclusión saco o cuál es la síntesis?
 
-> Escribe aquí
 
 4. ¿Cuáles son los pasos siguientes para continuar avanzando en el proyecto?
 
-> Escribe aquí
+ 
 
 ## Semana 13
 
