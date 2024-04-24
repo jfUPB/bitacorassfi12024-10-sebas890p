@@ -959,7 +959,7 @@ Para seguir avanzando debo tomar lo aprendido y empezar a aplicarlo.
 
 1. ¿Cuál será el propósito de la sesión de hoy?
 
-El proposito de esta sesion autonoma en casa fue investigar sobre la comunicacion en entre los programas ya que no cuento con el controlador para seguir experimentando asi puedo seguir con el paso siguiente que necesito aprender para poder avanzar 
+El proposito de esta sesion autonoma en casa fue investigar sobre la comunicacion en entre los programas , mas que todo sobre el error que me aparece en p5,ja el cual tengo evidenciado en la sesion 1 de esta semana ya que no cuento con el controlador para seguir experimentando asi puedo seguir con el paso siguiente que necesito aprender para poder avanzar 
 
 
  
