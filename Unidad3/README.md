@@ -959,12 +959,22 @@ Para seguir avanzando debo tomar lo aprendido y empezar a aplicarlo.
 
 1. ¿Cuál será el propósito de la sesión de hoy?
 
-El proposito de esta sesion autonoma en casa fue investigar sobre la comunicacion en entre los programas , mas que todo sobre el error que me aparece en p5,ja el cual tengo evidenciado en la sesion 1 de esta semana ya que no cuento con el controlador para seguir experimentando asi puedo seguir con el paso siguiente que necesito aprender para poder avanzar 
+El proposito de esta sesion autonoma en casa fue investigar sobre la comunicacion en entre los programas , mas que todo sobre el error que me aparece en p5,ja el cual tengo evidenciado en la sesion 1 de esta semana ya que no cuento con el controlador para seguir experimentando asi puedo seguir con el paso siguiente que necesito aprender para poder avanzar, luego de ver algunos videos y investigar no encuentro una solucion, por lo que acudi a chatgpt lo cual me explico lo siguiente:
+
+
+El error "createSerial is not defined" en tu código indica que la función createSerial() no está definida. Esto sugiere que estás intentando utilizar una función que no existe en el contexto de p5.js. En p5.js, no existe una función nativa llamada createSerial().
+
+Para trabajar con comunicación serial en p5.js, necesitas usar una biblioteca adicional como p5.serialport. Si quieres utilizar p5.serialport para comunicarte con Arduino u otro dispositivo a través de serial, primero debes incluir la biblioteca en tu proyecto.
+
+
+sin embargo luego de hacer esto y de incluir la biblioteca sigue dandome el mismo error 
 
 
  
 2. ¿Cuáles fueron los desafíos más significativos de la sesión y cómo los superé?
 
+
+En esta sesion el proposito era poder solucionar el error que me aparece sin embargo no fue posible asi que este fue el mayor desafio y trate de superarlo viendo videos y con chatgpt pero no consegui solucionarlo
 
 
 
@@ -972,9 +982,17 @@ El proposito de esta sesion autonoma en casa fue investigar sobre la comunicacio
 3. Basado en el trabajo de la sesión, ¿Qué aprendí o qué conclusión saco o cuál es la síntesis?
 
 
+Een esta sesion aprendi que debo agregar una biblioteca para comunicacion serial sin embargo no me esta funcionando
+
+
+
+
 4. ¿Cuáles son los pasos siguientes para continuar avanzando en el proyecto?
 
  
+para avanzar en el proyecto debo empezar con la parte del microbit
+
+
 
 ## Semana 13
 
