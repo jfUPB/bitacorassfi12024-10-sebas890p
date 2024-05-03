@@ -56,6 +56,8 @@ Esta operacion computacional intensiva realiza operaciones de potenciación entr
 Enlace: https://editor.p5js.org/sebas890p/sketches/2VGxRL_0c
 
 
+cuando se hace clic en el círculo se inicia un Web Worker que ejecuta la función HeavyComputation lo que permite que la animación siga funcionando sin bloqueos cuando la computación del Web Worker ha terminado se envía un mensaje al hilo principal para indicar que ya termino y la variable isProcessing se establece en false, lo que permite que se realicen más cálculos si es necesario
+
 
 * Enlace a una aplicación en p5.js que modifique el hilo secundario del **caso de estudio** de la actividad 7 que permite cambiar de manera aleatoria el color y tamaño de cada partícula.
 
