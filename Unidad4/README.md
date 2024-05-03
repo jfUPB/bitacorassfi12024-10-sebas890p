@@ -43,6 +43,13 @@
 
 * Enlace a una animación interactiva en p5.js, propuesta por ti y diferente a los ejemplos que te mostré, que se bloquee debido a una operación computacionalmente intensiva.
 
+Enlace: https://editor.p5js.org/sebas890p/sketches/2VGxRL_0c
+
+Esta operacion computacional intensiva realiza operaciones de potenciación entre números aleatorios, se está calculando la potencia de un número aleatorio elevado a otra potencia aleatoria, lo que implica operaciones exponenciales y aleatorias
+
+
+
+
 * Enlace a una animación interactiva en p5.js que solucione la aplicación anterior utilizando un hilo (web worker).
 
 * Enlace a una aplicación en p5.js que modifique el hilo secundario del **caso de estudio** de la actividad 7 que permite cambiar de manera aleatoria el color y tamaño de cada partícula.
