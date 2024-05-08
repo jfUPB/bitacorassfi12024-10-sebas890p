@@ -61,6 +61,17 @@ cuando se hace clic en el círculo se inicia un Web Worker que ejecuta la funci�
 
 * Enlace a una aplicación en p5.js que modifique el hilo secundario del **caso de estudio** de la actividad 7 que permite cambiar de manera aleatoria el color y tamaño de cada partícula.
 
+enlace: https://editor.p5js.org/sebas890p/sketches/IilqwsvDf
+
+
+En el código del sketch, agrege dos nuevas propiedades a la clase Particle color y size. Estas propiedades se inicializan con valores predeterminados en el constructor.
+En el método display() de la clase Particle, se utiliza la propiedad color para establecer el color de la partícula y la propiedad size para determinar el tamaño de la elipse.
+En el código del worker (Tarea.js), agrege dos nuevas líneas dentro del bucle forEach en la función calculateForces. La primera línea establece un color aleatorio para cada partícula utilizando la función color de p5.js y valores aleatorios para rojo, verde y azul. La segunda línea establece un tamaño aleatorio para cada partícula entre 10 y 30
+
+Sin embargo no se que puede estar fallando que al hacer click sobre el lienzo no se esta cambiando de color
+
+
+
 ## Aplicar
 
 * Enlace a la aplicación interativa en p5.js que resuelve el reto
