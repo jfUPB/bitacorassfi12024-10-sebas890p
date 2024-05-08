@@ -4,39 +4,39 @@
 
 **¿Qué quieres lograr con la aplicación?**
 
-> Escribe aquí
+> Con la aplicacion busco lograr que se pueda crear arte pintando el lienzo de p5.js de una forma interactiva usando el microbit como controlador medianto movimientos, de una forma mas detallada busco lograr que al mover el controlador microbit funcione como un pincel.
 > 
 
 **¿Qué tipo de interacción con el usuario deseas que tenga la aplicación?**
 
-> Escribe aquí
+> El usuario va a interactuar con la aplicacion mediante el microbit, que lo usara como controlador presionando los botones para cambiar de color y moviendolo para pintar en el lienzo.
 > 
 
 **¿Qué tipo de sensores y actuadores del micro:bit deseas usar?**
 
-> Escribe aquí
+> Deseo usar el ecelerometro para asi poder pintar moviendo el microbit y usar los actuadores A y B para asi cambiar de color.
 > 
 
 **¿Qué tipo de protocolo de comunicación deseas usar?**
 
-> Escribe aquí
+>  Por eventos 
 > 
 
 
 **¿Cómo será la arquitectura de la comunicación entre el micro:bit y p5.js?**
 
-> Escribe aquí
+> ASCII
 > 
 
 
 **¿Qué tipo de algoritmo deseas implementar en el hilo secundario?**
 
-> Escribe aquí
+> En el hilo secundario se implemtaria el poder cambiar de color.
 > 
 
 **¿Qué tipo de animación deseas mostrar en el hilo principal?**
 
-> Escribe aquí
+> El hilo principal se mostraria la animacion de como va pintando el pincel mientras el usuario lo va moviendo.
 > 
 
 ## Investigar 
