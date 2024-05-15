@@ -1000,19 +1000,28 @@ para avanzar en el proyecto debo empezar con la parte del microbit
 
 1. ¿Cuál será el propósito de la sesión de hoy?
 
-> Escribe aquí
+El proposito de esta sesion es simular el funcionamiento del microbit usando el acelerometro, la idea fue que para simular que el movimiento sea correcto pintar una flecha en los leds hacia donde se este moviendo el controlador de la siguiente forma:
+
+ 
+
+https://github.com/jfUPB/bitacorassfi12024-10-sebas890p/assets/110270011/91da95ac-eb5b-4c0b-94fb-eef7abd5aa2c
+
+
  
 2. ¿Cuáles fueron los desafíos más significativos de la sesión y cómo los superé?
 
-> Escribe aquí
+No tuve desafios significativos ya que a la primera me funciono la simulacion 
+
+
 
 3. Basado en el trabajo de la sesión, ¿Qué aprendí o qué conclusión saco o cuál es la síntesis?
 
-> Escribe aquí
+Como conclusion me doy cuenta que si puedo usar como pincel el controlador utilizando la funcion del acelerometro
+
 
 4. ¿Cuáles son los pasos siguientes para continuar avanzando en el proyecto?
 
-> Escribe aquí
+Los pasos que siguen es ahora simular los pulsadores mendiante el serial 
 
 ### Sesión 2
 
