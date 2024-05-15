@@ -1027,19 +1027,22 @@ Los pasos que siguen es ahora simular los pulsadores mendiante el serial
 
 1. ¿Cuál será el propósito de la sesión de hoy?
 
-> Escribe aquí
+El proposito de esta sesion fue simular como se cambiaria de color para pintar el lienzo mediante los pulsadores A y B en el microbit, para simular esto opte por la opcion que me dio una vez el profesor de simularlo mediante el serial para ver que este funcionando :
+
+Foto del serial: ![image](https://github.com/jfUPB/bitacorassfi12024-10-sebas890p/assets/110270011/b5498e6d-1545-40fe-a5ec-2ee64606cbbc)
+
  
 2. ¿Cuáles fueron los desafíos más significativos de la sesión y cómo los superé?
 
-> Escribe aquí
+No tuve desafios significativos ya que me funciono la simulacion a la primera.
 
 3. Basado en el trabajo de la sesión, ¿Qué aprendí o qué conclusión saco o cuál es la síntesis?
 
-> Escribe aquí
+La conclusion que saco es que si puedo realizar la interaccion con el controlador como esparaba, mediante los pulsadores y el acelerometro.
 
 4. ¿Cuáles son los pasos siguientes para continuar avanzando en el proyecto?
 
-> Escribe aquí
+Los paso a seguir es ahora tratar de comunicar los 2 programas ya que ya tengo la parte del p5,js y del micrbit.
 
 ### Sesión 3
 
