@@ -43,7 +43,7 @@
 
 * Enlace a una animación interactiva en p5.js, propuesta por ti y diferente a los ejemplos que te mostré, que se bloquee debido a una operación computacionalmente intensiva.
 
-Enlace: https://editor.p5js.org/sebas890p/sketches/2VGxRL_0c
+Enlace:[ https://editor.p5js.org/sebas890p/sketches/2VGxRL_0c](https://editor.p5js.org/sebastian890pg/sketches/CeaP2HDD2) 
 
 Esta operacion computacional intensiva realiza operaciones de potenciación entre números aleatorios, se está calculando la potencia de un número aleatorio elevado a otra potencia aleatoria, lo que implica operaciones exponenciales y aleatorias
 
